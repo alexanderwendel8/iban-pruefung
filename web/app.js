@@ -24,6 +24,15 @@ function zeige(registry) {
       ? `${papierform(pruefung.iban)} hat alle Prüfschritte bestanden.`
       : `Diese IBAN ist nicht gültig. ${pruefung.schritte.find((s) => s.status === "fehler").meldung}`;
 
+  const bank = document.getElementById("bank");
+  bank.hidden = !pruefung.gueltig;
+  if (pruefung.gueltig) {
+    document.getElementById("bankleitzahl").textContent = pruefung.bank.bankleitzahl;
+    document.getElementById("filiale").textContent = pruefung.bank.filiale ?? "";
+    document.getElementById("filiale").hidden = pruefung.bank.filiale === null;
+    document.getElementById("filiale-name").hidden = pruefung.bank.filiale === null;
+  }
+
   // Ohne Details bleibt nur das Ergebnis sichtbar
   liste.hidden = !details.checked;
 

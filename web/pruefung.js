@@ -138,6 +138,15 @@ function zerlege(struktur, iban) {
 }
 
 /**
+ * Liest Bankleitzahl und, falls das Land eine ausweist, die Filialkennung aus
+ * der IBAN. Die Positionen der Registry beziehen sich auf die BBAN (ab Stelle 5).
+ */
+export function bankdaten(iban, land) {
+  const teil = (bereich) => (bereich ? iban.slice(4 + bereich[0], 4 + bereich[1]) : null);
+  return { bankleitzahl: teil(land.bank_code), filiale: teil(land.branch_code) };
+}
+
+/**
  * Führt die Schritte der Reihe nach aus. Nach dem ersten Fehler werden die
  * folgenden Schritte nicht mehr ausgeführt (Status "offen").
  */
@@ -152,5 +161,13 @@ export function pruefeIban(eingabe, registry) {
     weiter = ergebnis.status === "ok";
     return { ...kopf, ...ergebnis };
   });
-  return { iban, land, schritte, leer: iban.length === 0, gueltig: weiter };
+  return {
+    iban,
+    land,
+    schritte,
+    leer: iban.length === 0,
+    gueltig: weiter,
+    // Bankdaten nur aus einer vollständig geprüften IBAN lesen
+    bank: weiter ? bankdaten(iban, land) : null,
+  };
 }
