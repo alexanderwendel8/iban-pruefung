@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IBAN-Prüfung</title>
+  <meta name="description" content="Prüft eine IBAN Schritt für Schritt: Länge, Prüfziffer.">
+  <link rel="stylesheet" href="web/style.css">
+</head>
+<body>
+  <main>
+    <h1>IBAN-Prüfung</h1>
+    <p class="einleitung">Die IBAN wird Schritt für Schritt geprüft. Die Eingabe bleibt in deinem Browser.</p>
+
+    <label for="iban">IBAN</label>
+    <input id="iban" type="text" inputmode="text" autocomplete="off" autocapitalize="characters"
+           spellcheck="false" placeholder="DE89 3704 0044 0532 0130 00" aria-describedby="ergebnis">
+    <p id="ergebnis" class="ergebnis" role="status" aria-live="polite"></p>
+
+    <ol id="schritte" class="schritte"></ol>
+    <p id="ladefehler" class="ladefehler" hidden></p>
+  </main>
+  <footer>
+    Formate aus der SWIFT IBAN Registry (<span id="anzahl">–</span> Länder).
+    Die Prüfung sagt nichts darüber, ob das Konto existiert.
+  </footer>
+  <script type="module" src="web/app.js"></script>
+</body>
+</html>
