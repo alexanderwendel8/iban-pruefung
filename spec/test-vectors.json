@@ -123,6 +123,14 @@
     {
       "iban": "GF4120041010050500013M02606",
       "reason": "Gebietscode statt Präfix des Mutterlands (FR)"
+    },
+    {
+      "iban": "DE973704004405320130A0",
+      "reason": "Buchstabe an rein numerischer Stelle, Prüfsumme stimmt trotzdem"
+    },
+    {
+      "iban": "GB55WEST1234569876543A",
+      "reason": "Buchstabe in der Kontonummer (nur Ziffern erlaubt), Prüfsumme stimmt trotzdem"
     }
   ]
 }
