@@ -1,0 +1,2348 @@
+{
+  "description": "IBAN-Formate je IBAN-Präfix aus der SWIFT IBAN Registry (ISO 13616)",
+  "source": "spec/sources/iban-registry.txt",
+  "source_sha256": "ad13d9595a991790ad1a5a1363d574a43357c710e3bce2170f95c9bef8932df0",
+  "documentation": "docs/iban-spezifikation.md",
+  "countries": {
+    "AD": {
+      "name": "Andorra",
+      "iban_length": 24,
+      "iban_structure": "AD2!n4!n4!n12!c",
+      "iban_regex": "AD[0-9]{2}[0-9]{4}[0-9]{4}[A-Za-z0-9]{12}",
+      "bban_length": 20,
+      "bban_structure": "4!n4!n12!c",
+      "bban_regex": "[0-9]{4}[0-9]{4}[A-Za-z0-9]{12}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        8
+      ],
+      "account_code": [
+        8,
+        20
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AD1200012030200359100100",
+      "example_iban_print": "AD12 0001 2030 2003 5910 0100",
+      "effective_date": "Apr-07",
+      "last_update": "Mar-21"
+    },
+    "AE": {
+      "name": "United Arab Emirates (The)",
+      "iban_length": 23,
+      "iban_structure": "AE2!n3!n16!n",
+      "iban_regex": "AE[0-9]{2}[0-9]{3}[0-9]{16}",
+      "bban_length": 19,
+      "bban_structure": "3!n16!n",
+      "bban_regex": "[0-9]{3}[0-9]{16}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        19
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AE070331234567890123456",
+      "example_iban_print": "AE07 0331 2345 6789 0123 456",
+      "effective_date": "Oct-11",
+      "last_update": "Feb-25"
+    },
+    "AL": {
+      "name": "Albania",
+      "iban_length": 28,
+      "iban_structure": "AL2!n8!n16!c",
+      "iban_regex": "AL[0-9]{2}[0-9]{8}[A-Za-z0-9]{16}",
+      "bban_length": 24,
+      "bban_structure": "8!n16!c",
+      "bban_regex": "[0-9]{8}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": [
+        3,
+        8
+      ],
+      "account_code": [
+        8,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AL47212110090000000235698741",
+      "example_iban_print": "AL47 2121 1009 0000 0002 3569 8741",
+      "effective_date": "Apr-09",
+      "last_update": "Jun-25"
+    },
+    "AT": {
+      "name": "Austria",
+      "iban_length": 20,
+      "iban_structure": "AT2!n5!n11!n",
+      "iban_regex": "AT[0-9]{2}[0-9]{5}[0-9]{11}",
+      "bban_length": 16,
+      "bban_structure": "5!n11!n",
+      "bban_regex": "[0-9]{5}[0-9]{11}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": null,
+      "account_code": [
+        5,
+        16
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AT611904300234573201",
+      "example_iban_print": "AT61 1904 3002 3457 3201",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "AZ": {
+      "name": "Azerbaijan",
+      "iban_length": 28,
+      "iban_structure": "AZ2!n4!a20!c",
+      "iban_regex": "AZ[0-9]{2}[A-Z]{4}[A-Za-z0-9]{20}",
+      "bban_length": 24,
+      "bban_structure": "4!a20!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{20}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AZ21NABZ00000000137010001944",
+      "example_iban_print": "AZ21 NABZ 0000 0000 1370 1000 1944",
+      "effective_date": "Jan-13",
+      "last_update": "Aug-16"
+    },
+    "BA": {
+      "name": "Bosnia and Herzegovina",
+      "iban_length": 20,
+      "iban_structure": "BA2!n3!n3!n8!n2!n",
+      "iban_regex": "BA[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{8}[0-9]{2}",
+      "bban_length": 16,
+      "bban_structure": "3!n3!n8!n2!n",
+      "bban_regex": "[0-9]{3}[0-9]{3}[0-9]{8}[0-9]{2}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": [
+        3,
+        6
+      ],
+      "account_code": [
+        6,
+        16
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BA391290079401028494",
+      "example_iban_print": "BA39 1290 0794 0102 8494",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "BE": {
+      "name": "Belgium",
+      "iban_length": 16,
+      "iban_structure": "BE2!n3!n7!n2!n",
+      "iban_regex": "BE[0-9]{2}[0-9]{3}[0-9]{7}[0-9]{2}",
+      "bban_length": 12,
+      "bban_structure": "3!n7!n2!n",
+      "bban_regex": "[0-9]{3}[0-9]{7}[0-9]{2}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        12
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BE68539007547034",
+      "example_iban_print": "BE68 5390 0754 7034",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
+    },
+    "BG": {
+      "name": "Bulgaria",
+      "iban_length": 22,
+      "iban_structure": "BG2!n4!a4!n2!n8!c",
+      "iban_regex": "BG[0-9]{2}[A-Z]{4}[0-9]{4}[0-9]{2}[A-Za-z0-9]{8}",
+      "bban_length": 18,
+      "bban_structure": "4!a4!n2!n8!c",
+      "bban_regex": "[A-Z]{4}[0-9]{4}[0-9]{2}[A-Za-z0-9]{8}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        8
+      ],
+      "account_code": [
+        8,
+        18
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BG80BNBG96611020345678",
+      "example_iban_print": "BG80 BNBG 9661 1020 3456 78",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "BH": {
+      "name": "Bahrain",
+      "iban_length": 22,
+      "iban_structure": "BH2!n4!a14!c",
+      "iban_regex": "BH[0-9]{2}[A-Z]{4}[A-Za-z0-9]{14}",
+      "bban_length": 18,
+      "bban_structure": "4!a14!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{14}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        18
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BH67BMAG00001299123456",
+      "example_iban_print": "BH67 BMAG 0000 1299 1234 56",
+      "effective_date": "Jan-12",
+      "last_update": "Jun-26"
+    },
+    "BI": {
+      "name": "Burundi",
+      "iban_length": 27,
+      "iban_structure": "BI2!n5!n5!n11!n2!n",
+      "iban_regex": "BI[0-9]{2}[0-9]{5}[0-9]{5}[0-9]{11}[0-9]{2}",
+      "bban_length": 23,
+      "bban_structure": "5!n5!n11!n2!n",
+      "bban_regex": "[0-9]{5}[0-9]{5}[0-9]{11}[0-9]{2}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": [
+        5,
+        10
+      ],
+      "account_code": [
+        10,
+        23
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BI4210000100010000332045181",
+      "example_iban_print": "BI42 10000 10001 00003320451 81",
+      "effective_date": "Oct-21",
+      "last_update": "Oct-21"
+    },
+    "BR": {
+      "name": "Brazil",
+      "iban_length": 29,
+      "iban_structure": "BR2!n8!c5!n10!n1!c1!c",
+      "iban_regex": "BR[0-9]{2}[A-Za-z0-9]{8}[0-9]{5}[0-9]{10}[A-Za-z0-9]{1}[A-Za-z0-9]{1}",
+      "bban_length": 25,
+      "bban_structure": "8!c5!n10!n1!c1!c",
+      "bban_regex": "[A-Za-z0-9]{8}[0-9]{5}[0-9]{10}[A-Za-z0-9]{1}[A-Za-z0-9]{1}",
+      "bank_code": [
+        0,
+        8
+      ],
+      "branch_code": [
+        8,
+        13
+      ],
+      "account_code": [
+        13,
+        25
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BR6699999A03000010009795493C1",
+      "example_iban_print": "BR66 9999 9A03 0000 1000 9795 493C 1",
+      "effective_date": "Aug-26",
+      "last_update": "Sep-26"
+    },
+    "BY": {
+      "name": "Belarus",
+      "iban_length": 28,
+      "iban_structure": "BY2!n4!c4!n16!c",
+      "iban_regex": "BY[0-9]{2}[A-Za-z0-9]{4}[0-9]{4}[A-Za-z0-9]{16}",
+      "bban_length": 24,
+      "bban_structure": "4!c4!n16!c",
+      "bban_regex": "[A-Za-z0-9]{4}[0-9]{4}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BY13NBRB3600900000002Z00AB00",
+      "example_iban_print": "BY13 NBRB 3600 9000 0000 2Z00 AB00",
+      "effective_date": "Jul-17",
+      "last_update": "Feb-24"
+    },
+    "CH": {
+      "name": "Switzerland",
+      "iban_length": 21,
+      "iban_structure": "CH2!n5!n12!c",
+      "iban_regex": "CH[0-9]{2}[0-9]{5}[A-Za-z0-9]{12}",
+      "bban_length": 17,
+      "bban_structure": "5!n12!c",
+      "bban_regex": "[0-9]{5}[A-Za-z0-9]{12}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": null,
+      "account_code": [
+        5,
+        17
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CH9300762011623852957",
+      "example_iban_print": "CH93 0076 2011 6238 5295 7",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "CR": {
+      "name": "Costa Rica",
+      "iban_length": 22,
+      "iban_structure": "CR2!n4!n14!n",
+      "iban_regex": "CR[0-9]{2}[0-9]{4}[0-9]{14}",
+      "bban_length": 18,
+      "bban_structure": "4!n14!n",
+      "bban_regex": "[0-9]{4}[0-9]{14}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        18
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CR05015202001026284066",
+      "example_iban_print": "CR05 0152 0200 1026 2840 66",
+      "effective_date": "Jun-11",
+      "last_update": "Jan-19"
+    },
+    "CY": {
+      "name": "Cyprus",
+      "iban_length": 28,
+      "iban_structure": "CY2!n3!n5!n16!c",
+      "iban_regex": "CY[0-9]{2}[0-9]{3}[0-9]{5}[A-Za-z0-9]{16}",
+      "bban_length": 24,
+      "bban_structure": "3!n5!n16!c",
+      "bban_regex": "[0-9]{3}[0-9]{5}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": [
+        3,
+        8
+      ],
+      "account_code": [
+        8,
+        24
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CY17002001280000001200527600",
+      "example_iban_print": "CY17 0020 0128 0000 0012 0052 7600",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-09"
+    },
+    "CZ": {
+      "name": "Czechia",
+      "iban_length": 24,
+      "iban_structure": "CZ2!n4!n6!n10!n",
+      "iban_regex": "CZ[0-9]{2}[0-9]{4}[0-9]{16}",
+      "bban_length": 20,
+      "bban_structure": "4!n16!n",
+      "bban_regex": "[0-9]{4}[0-9]{16}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        20
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CZ6508000000192000145399",
+      "example_iban_print": "CZ65 0800 0000 1920 0014 5399",
+      "effective_date": "Apr-07",
+      "last_update": "Jun-25"
+    },
+    "DE": {
+      "name": "Germany",
+      "iban_length": 22,
+      "iban_structure": "DE2!n8!n10!n",
+      "iban_regex": "DE[0-9]{2}[0-9]{8}[0-9]{10}",
+      "bban_length": 18,
+      "bban_structure": "8!n10!n",
+      "bban_regex": "[0-9]{8}[0-9]{10}",
+      "bank_code": [
+        0,
+        8
+      ],
+      "branch_code": null,
+      "account_code": [
+        8,
+        18
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DE89370400440532013000",
+      "example_iban_print": "DE89 3704 0044 0532 0130 00",
+      "effective_date": "Jul-07",
+      "last_update": "Jan-11"
+    },
+    "DJ": {
+      "name": "Djibouti",
+      "iban_length": 27,
+      "iban_structure": "DJ2!n5!n5!n11!n2!n",
+      "iban_regex": "DJ[0-9]{2}[0-9]{5}[0-9]{5}[0-9]{11}[0-9]{2}",
+      "bban_length": 23,
+      "bban_structure": "5!n5!n11!n2!n",
+      "bban_regex": "[0-9]{5}[0-9]{5}[0-9]{11}[0-9]{2}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": [
+        5,
+        10
+      ],
+      "account_code": [
+        10,
+        23
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DJ2100010000000154000100186",
+      "example_iban_print": "DJ21 0001 0000 0001 5400 0100 186",
+      "effective_date": "Apr-22",
+      "last_update": "May-22"
+    },
+    "DK": {
+      "name": "Denmark",
+      "iban_length": 18,
+      "iban_structure": "DK2!n4!n9!n1!n",
+      "iban_regex": "DK[0-9]{2}[0-9]{4}[0-9]{9}[0-9]{1}",
+      "bban_length": 14,
+      "bban_structure": "4!n9!n1!n",
+      "bban_regex": "[0-9]{4}[0-9]{9}[0-9]{1}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        14
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DK5000400440116243",
+      "example_iban_print": "DK50 0040 0440 1162 43",
+      "effective_date": "Apr-07",
+      "last_update": "Nov-18"
+    },
+    "DO": {
+      "name": "Dominican Republic",
+      "iban_length": 28,
+      "iban_structure": "DO2!n4!c20!n",
+      "iban_regex": "DO[0-9]{2}[A-Za-z0-9]{4}[0-9]{20}",
+      "bban_length": 24,
+      "bban_structure": "4!c20!n",
+      "bban_regex": "[A-Za-z0-9]{4}[0-9]{20}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DO28BAGR00000001212453611324",
+      "example_iban_print": "DO28 BAGR 0000 0001 2124 5361 1324",
+      "effective_date": "Dec-10",
+      "last_update": "Sep-16"
+    },
+    "EE": {
+      "name": "Estonia",
+      "iban_length": 20,
+      "iban_structure": "EE2!n2!n14!n",
+      "iban_regex": "EE[0-9]{2}[0-9]{2}[0-9]{14}",
+      "bban_length": 16,
+      "bban_structure": "2!n14!n",
+      "bban_regex": "[0-9]{2}[0-9]{14}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": null,
+      "account_code": [
+        2,
+        16
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "EE382200221020145685",
+      "example_iban_print": "EE38 2200 2210 2014 5685",
+      "effective_date": "Apr-07",
+      "last_update": "Dec-24"
+    },
+    "EG": {
+      "name": "Egypt",
+      "iban_length": 29,
+      "iban_structure": "EG2!n4!n4!n17!n",
+      "iban_regex": "EG[0-9]{2}[0-9]{4}[0-9]{4}[0-9]{17}",
+      "bban_length": 25,
+      "bban_structure": "4!n4!n17!n",
+      "bban_regex": "[0-9]{4}[0-9]{4}[0-9]{17}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        8
+      ],
+      "account_code": [
+        8,
+        25
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "EG380019000500000000263180002",
+      "example_iban_print": "EG38 0019 0005 0000 0000 2631 8000 2",
+      "effective_date": "Jan-21",
+      "last_update": "Jan-20"
+    },
+    "ES": {
+      "name": "Spain",
+      "iban_length": 24,
+      "iban_structure": "ES2!n4!n4!n1!n1!n10!n",
+      "iban_regex": "ES[0-9]{2}[0-9]{4}[0-9]{4}[0-9]{1}[0-9]{1}[0-9]{10}",
+      "bban_length": 20,
+      "bban_structure": "4!n4!n1!n1!n10!n",
+      "bban_regex": "[0-9]{4}[0-9]{4}[0-9]{1}[0-9]{1}[0-9]{10}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        8
+      ],
+      "account_code": [
+        8,
+        20
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "ES9121000418450200051332",
+      "example_iban_print": "ES91 2100 0418 4502 0005 1332",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
+    },
+    "FI": {
+      "name": "Finland",
+      "iban_length": 18,
+      "iban_structure": "FI2!n3!n11!n",
+      "iban_regex": "FI[0-9]{2}[0-9]{3}[0-9]{11}",
+      "bban_length": 14,
+      "bban_structure": "3!n11!n",
+      "bban_regex": "[0-9]{3}[0-9]{11}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        14
+      ],
+      "sepa": true,
+      "sepa_also_includes": "AX",
+      "includes_territories": [
+        "AX"
+      ],
+      "example_iban": "FI2112345600000785",
+      "example_iban_print": "FI21 1234 5600 0007 85",
+      "effective_date": "Dec-11",
+      "last_update": "Aug-16"
+    },
+    "FK": {
+      "name": "Falkland Islands (Malvinas)",
+      "iban_length": 18,
+      "iban_structure": "FK2!n2!a12!n",
+      "iban_regex": "FK[0-9]{2}[A-Z]{2}[0-9]{12}",
+      "bban_length": 14,
+      "bban_structure": "2!a12!n",
+      "bban_regex": "[A-Z]{2}[0-9]{12}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": null,
+      "account_code": [
+        2,
+        14
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "FK88SC123456789012",
+      "example_iban_print": "FK88 SC12 3456 7890 12",
+      "effective_date": "Jul-23",
+      "last_update": "Jul-23"
+    },
+    "FO": {
+      "name": "Faroe Islands",
+      "iban_length": 18,
+      "iban_structure": "FO2!n4!n9!n1!n",
+      "iban_regex": "FO[0-9]{2}[0-9]{4}[0-9]{9}[0-9]{1}",
+      "bban_length": 14,
+      "bban_structure": "4!n9!n1!n",
+      "bban_regex": "[0-9]{4}[0-9]{9}[0-9]{1}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        14
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "FO6264600001631634",
+      "example_iban_print": "FO62 6460 0001 6316 34",
+      "effective_date": "Apr-07",
+      "last_update": "Feb-17"
+    },
+    "FR": {
+      "name": "France",
+      "iban_length": 27,
+      "iban_structure": "FR2!n5!n5!n11!c2!n",
+      "iban_regex": "FR[0-9]{2}[0-9]{5}[0-9]{5}[A-Za-z0-9]{11}[0-9]{2}",
+      "bban_length": 23,
+      "bban_structure": "5!n5!n11!c2!n",
+      "bban_regex": "[0-9]{5}[0-9]{5}[A-Za-z0-9]{11}[0-9]{2}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": null,
+      "account_code": [
+        5,
+        23
+      ],
+      "sepa": true,
+      "sepa_also_includes": "GF, GP, MQ, YT, RE, PM, BL, MF",
+      "includes_territories": [
+        "GF",
+        "GP",
+        "MQ",
+        "RE",
+        "PF",
+        "TF",
+        "YT",
+        "NC",
+        "BL",
+        "MF",
+        "PM",
+        "WF"
+      ],
+      "example_iban": "FR1420041010050500013M02606",
+      "example_iban_print": "FR14 2004 1010 0505 0001 3M02 606",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "iban_length": 22,
+      "iban_structure": "GB2!n4!a6!n8!n",
+      "iban_regex": "GB[0-9]{2}[A-Z]{4}[0-9]{6}[0-9]{8}",
+      "bban_length": 18,
+      "bban_structure": "4!a6!n8!n",
+      "bban_regex": "[A-Z]{4}[0-9]{6}[0-9]{8}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        10
+      ],
+      "account_code": [
+        10,
+        18
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [
+        "IM",
+        "JE",
+        "GG"
+      ],
+      "example_iban": "GB29NWBK60161331926819",
+      "example_iban_print": "GB29 NWBK 6016 1331 9268 19",
+      "effective_date": "Apr-07",
+      "last_update": "May-17"
+    },
+    "GE": {
+      "name": "Georgia",
+      "iban_length": 22,
+      "iban_structure": "GE2!n2!a16!n",
+      "iban_regex": "GE[0-9]{2}[A-Z]{2}[0-9]{16}",
+      "bban_length": 18,
+      "bban_structure": "2!a16!n",
+      "bban_regex": "[A-Z]{2}[0-9]{16}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": null,
+      "account_code": [
+        2,
+        18
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GE29NB0000000101904917",
+      "example_iban_print": "GE29 NB00 0000 0101 9049 17",
+      "effective_date": "May-10",
+      "last_update": "Apr-23"
+    },
+    "GI": {
+      "name": "Gibraltar",
+      "iban_length": 23,
+      "iban_structure": "GI2!n4!a15!c",
+      "iban_regex": "GI[0-9]{2}[A-Z]{4}[A-Za-z0-9]{15}",
+      "bban_length": 19,
+      "bban_structure": "4!a15!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{15}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        19
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GI75NWBK000000007099453",
+      "example_iban_print": "GI75 NWBK 0000 0000 7099 453",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
+    },
+    "GL": {
+      "name": "Greenland",
+      "iban_length": 18,
+      "iban_structure": "GL2!n4!n9!n1!n",
+      "iban_regex": "GL[0-9]{2}[0-9]{4}[0-9]{9}[0-9]{1}",
+      "bban_length": 14,
+      "bban_structure": "4!n9!n1!n",
+      "bban_regex": "[0-9]{4}[0-9]{9}[0-9]{1}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        14
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GL8964710001000206",
+      "example_iban_print": "GL89 6471 0001 0002 06",
+      "effective_date": "Apr-07",
+      "last_update": "Feb-17"
+    },
+    "GR": {
+      "name": "Greece",
+      "iban_length": 27,
+      "iban_structure": "GR2!n3!n4!n16!c",
+      "iban_regex": "GR[0-9]{2}[0-9]{3}[0-9]{4}[A-Za-z0-9]{16}",
+      "bban_length": 23,
+      "bban_structure": "3!n4!n16!c",
+      "bban_regex": "[0-9]{3}[0-9]{4}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": [
+        3,
+        7
+      ],
+      "account_code": [
+        7,
+        23
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GR1601101250000000012300695",
+      "example_iban_print": "GR16 0110 1250 0000 0001 2300 695",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "GT": {
+      "name": "Guatemala",
+      "iban_length": 28,
+      "iban_structure": "GT2!n4!c20!c",
+      "iban_regex": "GT[0-9]{2}[A-Za-z0-9]{4}[A-Za-z0-9]{20}",
+      "bban_length": 24,
+      "bban_structure": "4!c20!c",
+      "bban_regex": "[A-Za-z0-9]{4}[A-Za-z0-9]{20}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GT82TRAJ01020000001210029690",
+      "example_iban_print": "GT82 TRAJ 0102 0000 0012 1002 9690",
+      "effective_date": "Sep-16",
+      "last_update": "Oct-16"
+    },
+    "HN": {
+      "name": "Honduras",
+      "iban_length": 28,
+      "iban_structure": "HN2!n4!a20!n",
+      "iban_regex": "HN[0-9]{2}[A-Z]{4}[0-9]{20}",
+      "bban_length": 24,
+      "bban_structure": "4!a20!n",
+      "bban_regex": "[A-Z]{4}[0-9]{20}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "HN88CABF00000000000250005469",
+      "example_iban_print": "HN88 CABF 0000 0000 0002 5000 5469",
+      "effective_date": "Oct-24",
+      "last_update": "Dec-24"
+    },
+    "HR": {
+      "name": "Croatia",
+      "iban_length": 21,
+      "iban_structure": "HR2!n7!n10!n",
+      "iban_regex": "HR[0-9]{2}[0-9]{7}[0-9]{10}",
+      "bban_length": 17,
+      "bban_structure": "7!n10!n",
+      "bban_regex": "[0-9]{7}[0-9]{10}",
+      "bank_code": [
+        0,
+        7
+      ],
+      "branch_code": null,
+      "account_code": [
+        7,
+        17
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "HR1210010051863000160",
+      "example_iban_print": "HR12 1001 0051 8630 0016 0",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "HU": {
+      "name": "Hungary",
+      "iban_length": 28,
+      "iban_structure": "HU2!n3!n4!n1!n15!n1!n",
+      "iban_regex": "HU[0-9]{2}[0-9]{3}[0-9]{4}[0-9]{1}[0-9]{15}[0-9]{1}",
+      "bban_length": 24,
+      "bban_structure": "3!n4!n1!n15!n1!n",
+      "bban_regex": "[0-9]{3}[0-9]{4}[0-9]{1}[0-9]{15}[0-9]{1}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": [
+        3,
+        7
+      ],
+      "account_code": [
+        7,
+        24
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "HU42117730161111101800000000",
+      "example_iban_print": "HU42 1177 3016 1111 1018 0000 0000",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
+    },
+    "IE": {
+      "name": "Ireland",
+      "iban_length": 22,
+      "iban_structure": "IE2!n4!a6!n8!n",
+      "iban_regex": "IE[0-9]{2}[A-Z]{4}[0-9]{6}[0-9]{8}",
+      "bban_length": 18,
+      "bban_structure": "4!a6!n8!n",
+      "bban_regex": "[A-Z]{4}[0-9]{6}[0-9]{8}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        10
+      ],
+      "account_code": [
+        10,
+        18
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IE29AIBK93115212345678",
+      "example_iban_print": "IE29 AIBK 9311 5212 3456 78",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "IL": {
+      "name": "Israel",
+      "iban_length": 23,
+      "iban_structure": "IL2!n3!n3!n13!n",
+      "iban_regex": "IL[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{13}",
+      "bban_length": 19,
+      "bban_structure": "3!n3!n13!n",
+      "bban_regex": "[0-9]{3}[0-9]{3}[0-9]{13}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": [
+        3,
+        6
+      ],
+      "account_code": [
+        6,
+        19
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IL620108000000099999999",
+      "example_iban_print": "IL62 0108 0000 0009 9999 999",
+      "effective_date": "Jul-07",
+      "last_update": "Sep-16"
+    },
+    "IQ": {
+      "name": "Iraq",
+      "iban_length": 23,
+      "iban_structure": "IQ2!n4!a3!n12!n",
+      "iban_regex": "IQ[0-9]{2}[A-Z]{4}[0-9]{3}[0-9]{12}",
+      "bban_length": 19,
+      "bban_structure": "4!a3!n12!n",
+      "bban_regex": "[A-Z]{4}[0-9]{3}[0-9]{12}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        7
+      ],
+      "account_code": [
+        7,
+        19
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IQ98NBIQ850123456789012",
+      "example_iban_print": "IQ98 NBIQ 8501 2345 6789 012",
+      "effective_date": "Jan-17",
+      "last_update": "Nov-16"
+    },
+    "IS": {
+      "name": "Iceland",
+      "iban_length": 26,
+      "iban_structure": "IS2!n4!n2!n6!n10!n",
+      "iban_regex": "IS[0-9]{2}[0-9]{4}[0-9]{2}[0-9]{6}[0-9]{10}",
+      "bban_length": 22,
+      "bban_structure": "4!n2!n6!n10!n",
+      "bban_regex": "[0-9]{4}[0-9]{2}[0-9]{6}[0-9]{10}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": [
+        2,
+        4
+      ],
+      "account_code": [
+        4,
+        22
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IS140159260076545510730339",
+      "example_iban_print": "IS14 0159 2600 7654 5510 7303 39",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "IT": {
+      "name": "Italy",
+      "iban_length": 27,
+      "iban_structure": "IT2!n1!a5!n5!n12!c",
+      "iban_regex": "IT[0-9]{2}[A-Z]{1}[0-9]{5}[0-9]{5}[A-Za-z0-9]{12}",
+      "bban_length": 23,
+      "bban_structure": "1!a5!n5!n12!c",
+      "bban_regex": "[A-Z]{1}[0-9]{5}[0-9]{5}[A-Za-z0-9]{12}",
+      "bank_code": [
+        1,
+        6
+      ],
+      "branch_code": [
+        6,
+        11
+      ],
+      "account_code": [
+        11,
+        23
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IT60X0542811101000000123456",
+      "example_iban_print": "IT60 X054 2811 1010 0000 0123 456",
+      "effective_date": "Jul-07",
+      "last_update": "Mar-13"
+    },
+    "JO": {
+      "name": "Jordan",
+      "iban_length": 30,
+      "iban_structure": "JO2!n4!a4!n18!c",
+      "iban_regex": "JO[0-9]{2}[A-Z]{4}[0-9]{4}[A-Za-z0-9]{18}",
+      "bban_length": 26,
+      "bban_structure": "4!a4!n18!c",
+      "bban_regex": "[A-Z]{4}[0-9]{4}[A-Za-z0-9]{18}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        8
+      ],
+      "account_code": [
+        8,
+        26
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "JO94CBJO0010000000000131000302",
+      "example_iban_print": "JO94 CBJO 0010 0000 0000 0131 0003 02",
+      "effective_date": "Feb-14",
+      "last_update": "Oct-25"
+    },
+    "KW": {
+      "name": "Kuwait",
+      "iban_length": 30,
+      "iban_structure": "KW2!n4!a22!c",
+      "iban_regex": "KW[0-9]{2}[A-Z]{4}[A-Za-z0-9]{22}",
+      "bban_length": 26,
+      "bban_structure": "4!a22!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{22}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        26
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "KW81CBKU0000000000001234560101",
+      "example_iban_print": "KW81 CBKU 0000 0000 0000 1234 5601 01",
+      "effective_date": "Jan-11",
+      "last_update": "Oct-25"
+    },
+    "KZ": {
+      "name": "Kazakhstan",
+      "iban_length": 20,
+      "iban_structure": "KZ2!n3!n13!c",
+      "iban_regex": "KZ[0-9]{2}[0-9]{3}[A-Za-z0-9]{13}",
+      "bban_length": 16,
+      "bban_structure": "3!n13!c",
+      "bban_regex": "[0-9]{3}[A-Za-z0-9]{13}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        16
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "KZ86125KZT5004100100",
+      "example_iban_print": "KZ86 125K ZT50 0410 0100",
+      "effective_date": "Sep-10",
+      "last_update": "Oct-25"
+    },
+    "LB": {
+      "name": "Lebanon",
+      "iban_length": 28,
+      "iban_structure": "LB2!n4!n20!c",
+      "iban_regex": "LB[0-9]{2}[0-9]{4}[A-Za-z0-9]{20}",
+      "bban_length": 24,
+      "bban_structure": "4!n20!c",
+      "bban_regex": "[0-9]{4}[A-Za-z0-9]{20}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LB62099900000001001901229114",
+      "example_iban_print": "LB62 0999 0000 0001 0019 0122 9114",
+      "effective_date": "Jan-10",
+      "last_update": "Sep-16"
+    },
+    "LC": {
+      "name": "Saint Lucia",
+      "iban_length": 32,
+      "iban_structure": "LC2!n4!a24!c",
+      "iban_regex": "LC[0-9]{2}[A-Z]{4}[A-Za-z0-9]{24}",
+      "bban_length": 28,
+      "bban_structure": "4!a24!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{24}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        28
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LC55HEMM000100010012001200023015",
+      "example_iban_print": "LC55 HEMM 0001 0001 0012 0012 0002 3015",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
+    },
+    "LI": {
+      "name": "Liechtenstein",
+      "iban_length": 21,
+      "iban_structure": "LI2!n5!n12!c",
+      "iban_regex": "LI[0-9]{2}[0-9]{5}[A-Za-z0-9]{12}",
+      "bban_length": 17,
+      "bban_structure": "5!n12!c",
+      "bban_regex": "[0-9]{5}[A-Za-z0-9]{12}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": null,
+      "account_code": [
+        5,
+        17
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LI21088100002324013AA",
+      "example_iban_print": "LI21 0881 0000 2324 013A A",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "LT": {
+      "name": "Lithuania",
+      "iban_length": 20,
+      "iban_structure": "LT2!n5!n11!n",
+      "iban_regex": "LT[0-9]{2}[0-9]{5}[0-9]{11}",
+      "bban_length": 16,
+      "bban_structure": "5!n11!n",
+      "bban_regex": "[0-9]{5}[0-9]{11}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": null,
+      "account_code": [
+        5,
+        16
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LT121000011101001000",
+      "example_iban_print": "LT12 1000 0111 0100 1000",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "LU": {
+      "name": "Luxembourg",
+      "iban_length": 20,
+      "iban_structure": "LU2!n3!n13!c",
+      "iban_regex": "LU[0-9]{2}[0-9]{3}[A-Za-z0-9]{13}",
+      "bban_length": 16,
+      "bban_structure": "3!n13!c",
+      "bban_regex": "[0-9]{3}[A-Za-z0-9]{13}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        16
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LU280019400644750000",
+      "example_iban_print": "LU28 0019 4006 4475 0000",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "LV": {
+      "name": "Latvia",
+      "iban_length": 21,
+      "iban_structure": "LV2!n4!a13!c",
+      "iban_regex": "LV[0-9]{2}[A-Z]{4}[A-Za-z0-9]{13}",
+      "bban_length": 17,
+      "bban_structure": "4!a13!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{13}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        17
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LV80BANK0000435195001",
+      "example_iban_print": "LV80 BANK 0000 4351 9500 1",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "LY": {
+      "name": "Libya",
+      "iban_length": 25,
+      "iban_structure": "LY2!n3!n3!n15!n",
+      "iban_regex": "LY[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{15}",
+      "bban_length": 21,
+      "bban_structure": "3!n3!n15!n",
+      "bban_regex": "[0-9]{3}[0-9]{3}[0-9]{15}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": [
+        3,
+        6
+      ],
+      "account_code": [
+        6,
+        21
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LY83002048000020100120361",
+      "example_iban_print": "LY83 002 048 000020100120361",
+      "effective_date": "Jan-21",
+      "last_update": "Sep-20"
+    },
+    "MC": {
+      "name": "Monaco",
+      "iban_length": 27,
+      "iban_structure": "MC2!n5!n5!n11!c2!n",
+      "iban_regex": "MC[0-9]{2}[0-9]{5}[0-9]{5}[A-Za-z0-9]{11}[0-9]{2}",
+      "bban_length": 23,
+      "bban_structure": "5!n5!n11!c2!n",
+      "bban_regex": "[0-9]{5}[0-9]{5}[A-Za-z0-9]{11}[0-9]{2}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": [
+        5,
+        10
+      ],
+      "account_code": [
+        10,
+        23
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MC5811222000010123456789030",
+      "example_iban_print": "MC58 1122 2000 0101 2345 6789 030",
+      "effective_date": "Jan-08",
+      "last_update": "Oct-25"
+    },
+    "MD": {
+      "name": "Moldova, Republic of",
+      "iban_length": 24,
+      "iban_structure": "MD2!n2!c18!c",
+      "iban_regex": "MD[0-9]{2}[A-Za-z0-9]{2}[A-Za-z0-9]{18}",
+      "bban_length": 20,
+      "bban_structure": "2!c18!c",
+      "bban_regex": "[A-Za-z0-9]{2}[A-Za-z0-9]{18}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": null,
+      "account_code": [
+        2,
+        20
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MD24AG000225100013104168",
+      "example_iban_print": "MD24 AG00 0225 1000 1310 4168",
+      "effective_date": "Jan-16",
+      "last_update": "Oct-25"
+    },
+    "ME": {
+      "name": "Montenegro",
+      "iban_length": 22,
+      "iban_structure": "ME2!n3!n13!n2!n",
+      "iban_regex": "ME[0-9]{2}[0-9]{3}[0-9]{13}[0-9]{2}",
+      "bban_length": 18,
+      "bban_structure": "3!n13!n2!n",
+      "bban_regex": "[0-9]{3}[0-9]{13}[0-9]{2}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        18
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "ME25505000012345678951",
+      "example_iban_print": "ME25 5050 0001 2345 6789 51",
+      "effective_date": "Apr-07",
+      "last_update": "May-10"
+    },
+    "MK": {
+      "name": "North Macedonia",
+      "iban_length": 19,
+      "iban_structure": "MK2!n3!n10!c2!n",
+      "iban_regex": "MK[0-9]{2}[0-9]{3}[A-Za-z0-9]{10}[0-9]{2}",
+      "bban_length": 15,
+      "bban_structure": "3!n10!c2!n",
+      "bban_regex": "[0-9]{3}[A-Za-z0-9]{10}[0-9]{2}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        15
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MK07250120000058984",
+      "example_iban_print": "MK07 2501 2000 0058 984",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "MN": {
+      "name": "Mongolia",
+      "iban_length": 20,
+      "iban_structure": "MN2!n4!n12!n",
+      "iban_regex": "MN[0-9]{2}[0-9]{4}[0-9]{12}",
+      "bban_length": 16,
+      "bban_structure": "4!n12!n",
+      "bban_regex": "[0-9]{4}[0-9]{12}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        16
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MN121234123456789123",
+      "example_iban_print": "MN12 1234 1234 5678 9123",
+      "effective_date": "Apr-23",
+      "last_update": "Apr-23"
+    },
+    "MR": {
+      "name": "Mauritania",
+      "iban_length": 27,
+      "iban_structure": "MR2!n5!n5!n11!n2!n",
+      "iban_regex": "MR[0-9]{2}[0-9]{5}[0-9]{5}[0-9]{11}[0-9]{2}",
+      "bban_length": 23,
+      "bban_structure": "5!n5!n11!n2!n",
+      "bban_regex": "[0-9]{5}[0-9]{5}[0-9]{11}[0-9]{2}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": [
+        5,
+        10
+      ],
+      "account_code": [
+        10,
+        23
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MR1300020001010000123456753",
+      "example_iban_print": "MR13 0002 0001 0100 0012 3456 753",
+      "effective_date": "Jan-12",
+      "last_update": "Sep-16"
+    },
+    "MT": {
+      "name": "Malta",
+      "iban_length": 31,
+      "iban_structure": "MT2!n4!a5!n18!c",
+      "iban_regex": "MT[0-9]{2}[A-Z]{4}[0-9]{5}[A-Za-z0-9]{18}",
+      "bban_length": 27,
+      "bban_structure": "4!a5!n18!c",
+      "bban_regex": "[A-Z]{4}[0-9]{5}[A-Za-z0-9]{18}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        9
+      ],
+      "account_code": [
+        9,
+        27
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MT84MALT011000012345MTLCAST001S",
+      "example_iban_print": "MT84 MALT 0110 0001 2345 MTLC AST0 01S",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "MU": {
+      "name": "Mauritius",
+      "iban_length": 30,
+      "iban_structure": "MU2!n4!a2!n2!n12!n3!n3!a",
+      "iban_regex": "MU[0-9]{2}[A-Z]{4}[0-9]{2}[0-9]{2}[0-9]{12}[0-9]{3}[A-Z]{3}",
+      "bban_length": 26,
+      "bban_structure": "4!a2!n2!n12!n3!n3!a",
+      "bban_regex": "[A-Z]{4}[0-9]{2}[0-9]{2}[0-9]{12}[0-9]{3}[A-Z]{3}",
+      "bank_code": [
+        0,
+        6
+      ],
+      "branch_code": [
+        6,
+        8
+      ],
+      "account_code": [
+        8,
+        26
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MU17BOMM0101101030300200000MUR",
+      "example_iban_print": "MU17 BOMM 0101 1010 3030 0200 000M UR",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "NI": {
+      "name": "Nicaragua",
+      "iban_length": 28,
+      "iban_structure": "NI2!n4!a20!n",
+      "iban_regex": "NI[0-9]{2}[A-Z]{4}[0-9]{20}",
+      "bban_length": 24,
+      "bban_structure": "4!a20!n",
+      "bban_regex": "[A-Z]{4}[0-9]{20}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "NI45BAPR00000013000003558124",
+      "example_iban_print": "NI45 BAPR 0000 0013 0000 0355 8124",
+      "effective_date": "Apr-23",
+      "last_update": "Dec-24"
+    },
+    "NL": {
+      "name": "Netherlands (The)",
+      "iban_length": 18,
+      "iban_structure": "NL2!n4!a10!n",
+      "iban_regex": "NL[0-9]{2}[A-Z]{4}[0-9]{10}",
+      "bban_length": 14,
+      "bban_structure": "4!a10!n",
+      "bban_regex": "[A-Z]{4}[0-9]{10}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        14
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "NL91ABNA0417164300",
+      "example_iban_print": "NL91 ABNA 0417 1643 00",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-20"
+    },
+    "NO": {
+      "name": "Norway",
+      "iban_length": 15,
+      "iban_structure": "NO2!n4!n6!n1!n",
+      "iban_regex": "NO[0-9]{2}[0-9]{4}[0-9]{6}[0-9]{1}",
+      "bban_length": 11,
+      "bban_structure": "4!n6!n1!n",
+      "bban_regex": "[0-9]{4}[0-9]{6}[0-9]{1}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        11
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "NO9386011117947",
+      "example_iban_print": "NO93 8601 1117 947",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-09"
+    },
+    "OM": {
+      "name": "Oman",
+      "iban_length": 23,
+      "iban_structure": "OM2!n3!n16!c",
+      "iban_regex": "OM[0-9]{2}[0-9]{3}[A-Za-z0-9]{16}",
+      "bban_length": 19,
+      "bban_structure": "3!n16!c",
+      "bban_regex": "[0-9]{3}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        19
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "OM810180000001299123456",
+      "example_iban_print": "OM81 0180 0000 0129 9123 456",
+      "effective_date": "Mar-24",
+      "last_update": "Mar-24"
+    },
+    "PK": {
+      "name": "Pakistan",
+      "iban_length": 24,
+      "iban_structure": "PK2!n4!a16!c",
+      "iban_regex": "PK[0-9]{2}[A-Z]{4}[A-Za-z0-9]{16}",
+      "bban_length": 20,
+      "bban_structure": "4!a16!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        20
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "PK36SCBL0000001123456702",
+      "example_iban_print": "PK36 SCBL 0000 0011 2345 6702",
+      "effective_date": "Dec-12",
+      "last_update": "Oct-25"
+    },
+    "PL": {
+      "name": "Poland",
+      "iban_length": 28,
+      "iban_structure": "PL2!n8!n16!n",
+      "iban_regex": "PL[0-9]{2}[0-9]{8}[0-9]{16}",
+      "bban_length": 24,
+      "bban_structure": "8!n16!n",
+      "bban_regex": "[0-9]{8}[0-9]{16}",
+      "bank_code": [
+        0,
+        8
+      ],
+      "branch_code": null,
+      "account_code": [
+        8,
+        24
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "PL61109010140000071219812874",
+      "example_iban_print": "PL61 1090 1014 0000 0712 1981 2874",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "PS": {
+      "name": "Palestine, State of",
+      "iban_length": 29,
+      "iban_structure": "PS2!n4!a21!c",
+      "iban_regex": "PS[0-9]{2}[A-Z]{4}[A-Za-z0-9]{21}",
+      "bban_length": 25,
+      "bban_structure": "4!a21!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{21}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        25
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "PS92PALS000000000400123456702",
+      "example_iban_print": "PS92 PALS 0000 0000 0400 1234 5670 2",
+      "effective_date": "Jul-12",
+      "last_update": "Oct-25"
+    },
+    "PT": {
+      "name": "Portugal",
+      "iban_length": 25,
+      "iban_structure": "PT2!n4!n4!n11!n2!n",
+      "iban_regex": "PT[0-9]{2}[0-9]{4}[0-9]{4}[0-9]{11}[0-9]{2}",
+      "bban_length": 21,
+      "bban_structure": "4!n4!n11!n2!n",
+      "bban_regex": "[0-9]{4}[0-9]{4}[0-9]{11}[0-9]{2}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        21
+      ],
+      "sepa": true,
+      "sepa_also_includes": "Azores, Madeira",
+      "includes_territories": [],
+      "example_iban": "PT50000201231234567890154",
+      "example_iban_print": "PT50 0002 0123 1234 5678 9015 4",
+      "effective_date": "Apr-07",
+      "last_update": "Dec-25"
+    },
+    "QA": {
+      "name": "Qatar",
+      "iban_length": 29,
+      "iban_structure": "QA2!n4!a21!c",
+      "iban_regex": "QA[0-9]{2}[A-Z]{4}[A-Za-z0-9]{21}",
+      "bban_length": 25,
+      "bban_structure": "4!a21!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{21}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        25
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "QA58DOHB00001234567890ABCDEFG",
+      "example_iban_print": "QA58 DOHB 0000 1234 5678 90AB CDEF G",
+      "effective_date": "Jan-14",
+      "last_update": "Jan-14"
+    },
+    "RO": {
+      "name": "Romania",
+      "iban_length": 24,
+      "iban_structure": "RO2!n4!a16!c",
+      "iban_regex": "RO[0-9]{2}[A-Z]{4}[A-Za-z0-9]{16}",
+      "bban_length": 20,
+      "bban_structure": "4!a16!c",
+      "bban_regex": "[A-Z]{4}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        20
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "RO49AAAA1B31007593840000",
+      "example_iban_print": "RO49 AAAA 1B31 0075 9384 0000",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "RS": {
+      "name": "Serbia",
+      "iban_length": 22,
+      "iban_structure": "RS2!n3!n13!n2!n",
+      "iban_regex": "RS[0-9]{2}[0-9]{3}[0-9]{13}[0-9]{2}",
+      "bban_length": 18,
+      "bban_structure": "3!n13!n2!n",
+      "bban_regex": "[0-9]{3}[0-9]{13}[0-9]{2}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        18
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "RS35260005601001611379",
+      "example_iban_print": "RS35 2600 0560 1001 6113 79",
+      "effective_date": "Apr-07",
+      "last_update": "Mar-17"
+    },
+    "RU": {
+      "name": "Russian Federation",
+      "iban_length": 33,
+      "iban_structure": "RU2!n9!n5!n15!c",
+      "iban_regex": "RU[0-9]{2}[0-9]{9}[0-9]{5}[A-Za-z0-9]{15}",
+      "bban_length": 29,
+      "bban_structure": "9!n5!n15!c",
+      "bban_regex": "[0-9]{9}[0-9]{5}[A-Za-z0-9]{15}",
+      "bank_code": [
+        0,
+        9
+      ],
+      "branch_code": [
+        9,
+        14
+      ],
+      "account_code": [
+        14,
+        29
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "RU0304452522540817810538091310419",
+      "example_iban_print": "RU03 0445 2522 5408 1781 0538 0913 1041 9",
+      "effective_date": "Apr-23",
+      "last_update": "Oct-25"
+    },
+    "SA": {
+      "name": "Saudi Arabia",
+      "iban_length": 24,
+      "iban_structure": "SA2!n2!n18!c",
+      "iban_regex": "SA[0-9]{2}[0-9]{2}[A-Za-z0-9]{18}",
+      "bban_length": 20,
+      "bban_structure": "2!n18!c",
+      "bban_regex": "[0-9]{2}[A-Za-z0-9]{18}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": null,
+      "account_code": [
+        2,
+        20
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SA0380000000608010167519",
+      "example_iban_print": "SA03 8000 0000 6080 1016 7519",
+      "effective_date": "Jul-16",
+      "last_update": "Sep-16"
+    },
+    "SC": {
+      "name": "Seychelles",
+      "iban_length": 31,
+      "iban_structure": "SC2!n4!a2!n2!n16!n3!a",
+      "iban_regex": "SC[0-9]{2}[A-Z]{4}[0-9]{2}[0-9]{2}[0-9]{16}[A-Z]{3}",
+      "bban_length": 27,
+      "bban_structure": "4!a2!n2!n16!n3!a",
+      "bban_regex": "[A-Z]{4}[0-9]{2}[0-9]{2}[0-9]{16}[A-Z]{3}",
+      "bank_code": [
+        0,
+        6
+      ],
+      "branch_code": [
+        6,
+        8
+      ],
+      "account_code": [
+        8,
+        27
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SC18SSCB11010000000000001497USD",
+      "example_iban_print": "SC18 SSCB 1101 0000 0000 0000 1497 USD",
+      "effective_date": "Oct-16",
+      "last_update": "Oct-19"
+    },
+    "SD": {
+      "name": "Sudan",
+      "iban_length": 18,
+      "iban_structure": "SD2!n2!n12!n",
+      "iban_regex": "SD[0-9]{2}[0-9]{2}[0-9]{12}",
+      "bban_length": 14,
+      "bban_structure": "2!n12!n",
+      "bban_regex": "[0-9]{2}[0-9]{12}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": null,
+      "account_code": [
+        2,
+        14
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SD2129010501234001",
+      "example_iban_print": "SD21 2901 0501 2340 01",
+      "effective_date": "Jul-21",
+      "last_update": "Oct-21"
+    },
+    "SE": {
+      "name": "Sweden",
+      "iban_length": 24,
+      "iban_structure": "SE2!n3!n16!n1!n",
+      "iban_regex": "SE[0-9]{2}[0-9]{3}[0-9]{16}[0-9]{1}",
+      "bban_length": 20,
+      "bban_structure": "3!n16!n1!n",
+      "bban_regex": "[0-9]{3}[0-9]{16}[0-9]{1}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        20
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SE4550000000058398257466",
+      "example_iban_print": "SE45 5000 0000 0583 9825 7466",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-09"
+    },
+    "SI": {
+      "name": "Slovenia",
+      "iban_length": 19,
+      "iban_structure": "SI2!n5!n8!n2!n",
+      "iban_regex": "SI[0-9]{2}[0-9]{5}[0-9]{8}[0-9]{2}",
+      "bban_length": 15,
+      "bban_structure": "5!n8!n2!n",
+      "bban_regex": "[0-9]{5}[0-9]{8}[0-9]{2}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": null,
+      "account_code": [
+        5,
+        15
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SI56263300012039086",
+      "example_iban_print": "SI56 2633 0001 2039 086",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-16"
+    },
+    "SK": {
+      "name": "Slovakia",
+      "iban_length": 24,
+      "iban_structure": "SK2!n4!n6!n10!n",
+      "iban_regex": "SK[0-9]{2}[0-9]{4}[0-9]{6}[0-9]{10}",
+      "bban_length": 20,
+      "bban_structure": "4!n6!n10!n",
+      "bban_regex": "[0-9]{4}[0-9]{6}[0-9]{10}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        20
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SK3112000000198742637541",
+      "example_iban_print": "SK31 1200 0000 1987 4263 7541",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
+    },
+    "SM": {
+      "name": "San Marino",
+      "iban_length": 27,
+      "iban_structure": "SM2!n1!a5!n5!n12!c",
+      "iban_regex": "SM[0-9]{2}[A-Z]{1}[0-9]{5}[0-9]{5}[A-Za-z0-9]{12}",
+      "bban_length": 23,
+      "bban_structure": "1!a5!n5!n12!c",
+      "bban_regex": "[A-Z]{1}[0-9]{5}[0-9]{5}[A-Za-z0-9]{12}",
+      "bank_code": [
+        1,
+        6
+      ],
+      "branch_code": [
+        6,
+        11
+      ],
+      "account_code": [
+        11,
+        23
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SM86U0322509800000000270100",
+      "example_iban_print": "SM86 U032 2509 8000 0000 0270 100",
+      "effective_date": "Aug-07",
+      "last_update": "Aug-16"
+    },
+    "SO": {
+      "name": "Somalia",
+      "iban_length": 23,
+      "iban_structure": "SO2!n4!n3!n12!n",
+      "iban_regex": "SO[0-9]{2}[0-9]{4}[0-9]{3}[0-9]{12}",
+      "bban_length": 19,
+      "bban_structure": "4!n3!n12!n",
+      "bban_regex": "[0-9]{4}[0-9]{3}[0-9]{12}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        7
+      ],
+      "account_code": [
+        7,
+        19
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SO211000001001000100141",
+      "example_iban_print": "SO21 1000 0010 0100 0100 141",
+      "effective_date": "Jan-23",
+      "last_update": "Feb-25"
+    },
+    "ST": {
+      "name": "Sao Tome and Principe",
+      "iban_length": 25,
+      "iban_structure": "ST2!n4!n4!n11!n2!n",
+      "iban_regex": "ST[0-9]{2}[0-9]{4}[0-9]{4}[0-9]{11}[0-9]{2}",
+      "bban_length": 21,
+      "bban_structure": "4!n4!n11!n2!n",
+      "bban_regex": "[0-9]{4}[0-9]{4}[0-9]{11}[0-9]{2}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        8
+      ],
+      "account_code": [
+        8,
+        21
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "ST23000100010051845310146",
+      "example_iban_print": "ST23 0001 0001 0051 8453 1014 6",
+      "effective_date": "Mar-20",
+      "last_update": "May-20"
+    },
+    "SV": {
+      "name": "El Salvador",
+      "iban_length": 28,
+      "iban_structure": "SV2!n4!a20!n",
+      "iban_regex": "SV[0-9]{2}[A-Z]{4}[0-9]{20}",
+      "bban_length": 24,
+      "bban_structure": "4!a20!n",
+      "bban_regex": "[A-Z]{4}[0-9]{20}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        24
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SV62CENR00000000000000700025",
+      "example_iban_print": "SV 62 CENR 00000000000000700025",
+      "effective_date": "Dec-16",
+      "last_update": "Mar-21"
+    },
+    "TL": {
+      "name": "Timor-Leste",
+      "iban_length": 23,
+      "iban_structure": "TL2!n3!n14!n2!n",
+      "iban_regex": "TL[0-9]{2}[0-9]{3}[0-9]{14}[0-9]{2}",
+      "bban_length": 19,
+      "bban_structure": "3!n14!n2!n",
+      "bban_regex": "[0-9]{3}[0-9]{14}[0-9]{2}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        19
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "TL380080012345678910157",
+      "example_iban_print": "TL38 0080 0123 4567 8910 157",
+      "effective_date": "Sep-14",
+      "last_update": "Nov-14"
+    },
+    "TN": {
+      "name": "Tunisia",
+      "iban_length": 24,
+      "iban_structure": "TN2!n2!n3!n13!n2!n",
+      "iban_regex": "TN[0-9]{2}[0-9]{2}[0-9]{3}[0-9]{13}[0-9]{2}",
+      "bban_length": 20,
+      "bban_structure": "2!n3!n13!n2!n",
+      "bban_regex": "[0-9]{2}[0-9]{3}[0-9]{13}[0-9]{2}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": [
+        2,
+        5
+      ],
+      "account_code": [
+        5,
+        20
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "TN5910006035183598478831",
+      "example_iban_print": "TN59 1000 6035 1835 9847 8831",
+      "effective_date": "Apr-07",
+      "last_update": "May-16"
+    },
+    "TR": {
+      "name": "Turkiye",
+      "iban_length": 26,
+      "iban_structure": "TR2!n5!n1!n16!c",
+      "iban_regex": "TR[0-9]{2}[0-9]{5}[0-9]{1}[A-Za-z0-9]{16}",
+      "bban_length": 22,
+      "bban_structure": "5!n1!n16!c",
+      "bban_regex": "[0-9]{5}[0-9]{1}[A-Za-z0-9]{16}",
+      "bank_code": [
+        0,
+        5
+      ],
+      "branch_code": null,
+      "account_code": [
+        5,
+        22
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "TR330006100519786457841326",
+      "example_iban_print": "TR33 0006 1005 1978 6457 8413 26",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
+    },
+    "UA": {
+      "name": "Ukraine",
+      "iban_length": 29,
+      "iban_structure": "UA2!n6!n19!c",
+      "iban_regex": "UA[0-9]{2}[0-9]{6}[A-Za-z0-9]{19}",
+      "bban_length": 25,
+      "bban_structure": "6!n19!c",
+      "bban_regex": "[0-9]{6}[A-Za-z0-9]{19}",
+      "bank_code": [
+        0,
+        6
+      ],
+      "branch_code": null,
+      "account_code": [
+        6,
+        25
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "UA213223130000026007233566001",
+      "example_iban_print": "UA21 3223 1300 0002 6007 2335 6600 1",
+      "effective_date": "Feb-16",
+      "last_update": "Oct-25"
+    },
+    "VA": {
+      "name": "Holy See",
+      "iban_length": 22,
+      "iban_structure": "VA2!n3!n15!n",
+      "iban_regex": "VA[0-9]{2}[0-9]{3}[0-9]{15}",
+      "bban_length": 18,
+      "bban_structure": "3!n15!n",
+      "bban_regex": "[0-9]{3}[0-9]{15}",
+      "bank_code": [
+        0,
+        3
+      ],
+      "branch_code": null,
+      "account_code": [
+        3,
+        18
+      ],
+      "sepa": true,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "VA59001123000012345678",
+      "example_iban_print": "VA59 001 1230 0001 2345 678",
+      "effective_date": "Mar-19",
+      "last_update": "Oct-25"
+    },
+    "VG": {
+      "name": "Virgin Islands (British)",
+      "iban_length": 24,
+      "iban_structure": "VG2!n4!a16!n",
+      "iban_regex": "VG[0-9]{2}[A-Z]{4}[0-9]{16}",
+      "bban_length": 20,
+      "bban_structure": "4!a16!n",
+      "bban_regex": "[A-Z]{4}[0-9]{16}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": null,
+      "account_code": [
+        4,
+        20
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "VG96VPVG0000012345678901",
+      "example_iban_print": "VG96 VPVG 0000 0123 4567 8901",
+      "effective_date": "Apr-12",
+      "last_update": "Oct-25"
+    },
+    "XK": {
+      "name": "Kosovo",
+      "iban_length": 20,
+      "iban_structure": "XK2!n4!n10!n2!n",
+      "iban_regex": "XK[0-9]{2}[0-9]{4}[0-9]{10}[0-9]{2}",
+      "bban_length": 16,
+      "bban_structure": "4!n10!n2!n",
+      "bban_regex": "[0-9]{4}[0-9]{10}[0-9]{2}",
+      "bank_code": [
+        0,
+        2
+      ],
+      "branch_code": [
+        2,
+        4
+      ],
+      "account_code": [
+        4,
+        16
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "XK051212012345678906",
+      "example_iban_print": "XK05 1212 0123 4567 8906",
+      "effective_date": "Sep-14",
+      "last_update": "Sep-16"
+    },
+    "YE": {
+      "name": "Yemen",
+      "iban_length": 30,
+      "iban_structure": "YE2!n4!a4!n18!c",
+      "iban_regex": "YE[0-9]{2}[A-Z]{4}[0-9]{4}[A-Za-z0-9]{18}",
+      "bban_length": 26,
+      "bban_structure": "4!a4!n18!c",
+      "bban_regex": "[A-Z]{4}[0-9]{4}[A-Za-z0-9]{18}",
+      "bank_code": [
+        0,
+        4
+      ],
+      "branch_code": [
+        4,
+        8
+      ],
+      "account_code": [
+        8,
+        26
+      ],
+      "sepa": false,
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "YE15CBYE0001018861234567891234",
+      "example_iban_print": "YE15 CBYE 0001 0188 6123 4567 8912 34",
+      "effective_date": "Jul-24",
+      "last_update": "Jul-24"
+    }
+  }
+}
