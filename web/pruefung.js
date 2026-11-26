@@ -84,7 +84,58 @@ export const SCHRITTE = [
       return ok(`Die Prüfziffern ${ziffern} stimmen.`, details);
     },
   },
+  {
+    id: "struktur",
+    titel: "Struktur",
+    beschreibung: "Jedes Land legt fest, an welchen Stellen Ziffern oder Buchstaben stehen.",
+    pruefe(iban, land) {
+      const abschnitte = zerlege(land.bban_structure, iban);
+      const details = [
+        ["Format", land.iban_structure],
+        ...abschnitte.map((a) => [
+          `${stellen(a)}: ${a.laenge} ${a.klasse.name}`,
+          a.passt ? a.text : `${a.text} (passt nicht)`,
+        ]),
+      ];
+      const falsch = abschnitte.filter((a) => !a.passt);
+      if (!falsch.length) return ok(`Der Aufbau entspricht dem Format für ${land.name}.`, details);
+      const a = falsch[0];
+      const weitere = falsch.length > 1 ? ` Insgesamt passen ${falsch.length} Abschnitte nicht.` : "";
+      return fehler(
+        `${stellen(a)}: Erwartet ${a.laenge === 1 ? "wird" : "werden"} ${a.laenge} ${a.klasse.name}, dort steht „${a.text}“.${weitere}`,
+        details,
+      );
+    },
+  },
 ];
+
+// Zeichenklassen der Registry-Notation (Spezifikation, Abschnitt 3)
+const KLASSEN = {
+  n: { name: "Ziffern", muster: /^[0-9]+$/ },
+  a: { name: "Buchstaben", muster: /^[A-Z]+$/ },
+  c: { name: "Buchstaben oder Ziffern", muster: /^[A-Z0-9]+$/ },
+};
+
+const stellen = (a) => (a.laenge === 1 ? `Stelle ${a.von}` : `Stellen ${a.von}–${a.bis}`);
+
+/** Teilt die BBAN der IBAN nach der Strukturangabe (z. B. "8!n10!n") in Abschnitte. */
+function zerlege(struktur, iban) {
+  let position = 4; // hinter Ländercode und Prüfziffern
+  return [...struktur.matchAll(/(\d+)!([nac])/g)].map(([, anzahl, art]) => {
+    const laenge = Number(anzahl);
+    const text = iban.slice(position, position + laenge);
+    const abschnitt = {
+      von: position + 1,
+      bis: position + laenge,
+      laenge,
+      klasse: KLASSEN[art],
+      text,
+      passt: KLASSEN[art].muster.test(text),
+    };
+    position += laenge;
+    return abschnitt;
+  });
+}
 
 /**
  * Führt die Schritte der Reihe nach aus. Nach dem ersten Fehler werden die
