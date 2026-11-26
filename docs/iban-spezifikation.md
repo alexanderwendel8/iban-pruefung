@@ -112,54 +112,62 @@ strenge Prüfung lehnt sie ab.
 
 ## 6. Länderdaten (`spec/iban-registry.json`)
 
-Schlüssel unter `countries` ist das IBAN-Präfix (89 Einträge). Felder:
+Erzeugt aus der Originaldatei der SWIFT IBAN Registry. Schlüssel unter
+`countries` ist das IBAN-Präfix (89 Einträge). Felder:
 
 | Feld | Bedeutung |
 |---|---|
-| `name` | Ländername (englisch) |
+| `name` | Ländername laut Registry (englisch) |
 | `iban_length`, `bban_length` | Längen in Zeichen |
 | `iban_structure`, `bban_structure` | Format in Registry-Notation |
 | `iban_regex`, `bban_regex` | daraus abgeleitete Regex (ohne Anker; mit `fullmatch` bzw. `^…$` verwenden) |
-| `bank_code`, `branch_code`, `account_code` | Position in der BBAN als `[start, ende)`, 0-basiert; `null`, wenn nicht ausgewiesen |
+| `bank_code`, `branch_code` | Position in der BBAN als `[start, ende)`, 0-basiert; `null`, wenn nicht ausgewiesen |
+| `account_code` | abgeleitet: alles hinter Bank- und Filialkennung |
 | `sepa` | Land nimmt am SEPA-Raum teil |
-| `includes_territories` | Gebiete, die laut Registry vom Land mit umfasst sind |
+| `sepa_also_includes` | Gebiete, die laut Registry zusätzlich zum SEPA-Raum zählen (Freitext) |
+| `includes_territories` | Ländercodes der Gebiete, die das Präfix laut Registry mit umfasst |
+| `example_iban`, `example_iban_print` | offizielles Beispiel, elektronisch und in Papierform |
+| `effective_date`, `last_update` | Angaben der Registry zum Eintrag (`Mon-JJ`) |
 
 Hinweise zur Auslegung:
 
+- Die Registry zählt Positionen 1-basiert und inklusiv (`5-8`); die JSON-Datei
+  rechnet in 0-basierte, halboffene Bereiche um (`[4, 8]`).
 - `c` erlaubt in der Notation Kleinbuchstaben. Da vor der Prüfung in
   Großbuchstaben gewandelt wird, spielt das praktisch keine Rolle.
-- `account_code` ist abgeleitet (alles hinter Bank- und Filialkennung) und kann
-  nationale Prüfziffern oder Kontoartkennzeichen enthalten.
-- **Gebiete** (`AX` unter `FI`; `GG`, `IM`, `JE` unter `GB`; die französischen
-  Überseegebiete unter `FR`): Ihre IBANs beginnen mit dem Präfix des
-  Mutterlands. Ob ein Gebietscode selbst als IBAN-Präfix akzeptiert wird (z. B.
-  `GF…`, `PF…`), handhaben Bibliotheken unterschiedlich. Diese Datei behandelt
-  sie **nicht** als eigene Präfixe.
+- `account_code` kann nationale Prüfziffern oder Kontoartkennzeichen enthalten.
+- **Gebiete** (`AX` unter `FI`; `IM`, `JE`, `GG` unter `GB`; die französischen
+  Überseegebiete unter `FR`): Die Registry führt sie nur in der Zeile „Country
+  code includes other countries/territories“ und nennt keine eigenen Formate.
+  Ihre IBANs beginnen mit dem Präfix des Mutterlands; Gebietscodes sind hier
+  **keine** gültigen IBAN-Präfixe (`GF…` wird abgelehnt). Manche Bibliotheken
+  sind großzügiger.
+- Die Papierform-Beispiele der Registry weichen teils von den Vierergruppen ab
+  (z. B. `BI`, `LY`, `SV`). Maßgeblich bleibt die Regel aus Abschnitt 2; ohne
+  Leerzeichen stimmen alle mit dem elektronischen Beispiel überein.
 - Länder, die IBAN-ähnliche Formate nutzen, aber nicht in der SWIFT-Registry
   stehen, sind nicht enthalten.
 
 ## 7. Herkunft und Aktualität der Daten
 
-- Abrufdatum: siehe Feld `retrieved` in der JSON-Datei.
-- `swift.com` weist automatisierte Abrufe ab (HTTP 403). Die Strukturdaten
-  stammen deshalb aus der Datei, die das Projekt
-  [schwifty](https://github.com/mdomke/schwifty) wöchentlich unverändert aus der
-  offiziellen „IBAN Registry (TXT)“ erzeugt.
-- Gegenprobe mit [python-stdnum](https://github.com/arthurdejong/python-stdnum)
-  (`iban.dat`, erzeugt aus Registry-Release 101): gleiche 89 Präfixe, alle
-  BBAN-Strukturen identisch – **Ausnahme Brasilien**: dort `8!n5!n10!n1!a1!c`,
-  in den neueren Daten `8!c5!n10!n1!c1!c` (hier übernommen; schließt das ältere
-  Format ein). Bei Bedarf gegen die Original-Registry prüfen.
-- Die Release-Nummer der zugrunde liegenden Registry ließ sich nicht direkt an
-  der Quelle verifizieren.
-- Aktualisieren: `python3 scripts/build_registry.py` (lädt die Quelle neu,
-  prüft Konsistenz und die Testvektoren). Mit einer manuell von SWIFT geladenen
-  Registry abgleichen:
-  <https://www.swift.com/standards/data-standards/iban-international-bank-account-number>
+- Quelle: [`spec/sources/iban-registry.txt`](../spec/sources/iban-registry.txt),
+  die „IBAN Registry (TXT)“ von
+  <https://www.swift.com/standards/data-standards/iban-international-bank-account-number>,
+  unverändert abgelegt (Windows-1252, tabulatorgetrennt, ein Land je Spalte).
+  Die Prüfsumme der verwendeten Datei steht als `source_sha256` in der JSON-Datei.
+- Stand: in die Sitzung hochgeladen am 26.11.2026. Die Datei selbst nennt keine
+  Release-Nummer; die jüngsten Einträge sind von September 2026 (`BR`,
+  wirksam ab August 2026 mit alphanumerischer Bankkennung `8!c5!n10!n1!c1!c`).
+- `swift.com` weist automatisierte Abrufe ab (HTTP 403); die Datei muss von Hand
+  geladen werden.
+- Aktualisieren: neue TXT-Datei über die alte legen, dann
+  `python3 scripts/build_registry.py`. Das Skript prüft die Konsistenz von
+  Struktur- und Längenangaben, erzeugt beide JSON-Dateien neu und prüft die
+  Testvektoren.
 
 ## 8. Testvektoren (`spec/test-vectors.json`)
 
-- `valid`: je IBAN-Präfix eine Beispiel-IBAN (fiktive Konten, übernommen aus
-  [php-iban](https://github.com/globalcitizen/php-iban)), maschinell gegen
-  Struktur und Prüfsumme dieser Spezifikation verifiziert.
-- `invalid`: Fälle, die abgelehnt werden müssen, jeweils mit Grund.
+- `valid`: die 89 offiziellen Beispiel-IBANs der Registry (elektronisches
+  Format). Alle bestehen Struktur- und Prüfsummenprüfung dieser Spezifikation.
+- `invalid`: Fälle, die abgelehnt werden müssen, jeweils mit Grund (von Hand
+  gepflegt, das Skript lässt sie unverändert).

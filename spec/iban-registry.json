@@ -1,8 +1,8 @@
 {
-  "description": "IBAN-Strukturen je Ländercode nach SWIFT IBAN Registry (ISO 13616)",
-  "source": "https://raw.githubusercontent.com/mdomke/schwifty/main/schwifty/iban_registry/generated.json",
-  "retrieved": "2026-11-26",
-  "notation": "docs/iban-spezifikation.md",
+  "description": "IBAN-Formate je IBAN-Präfix aus der SWIFT IBAN Registry (ISO 13616)",
+  "source": "spec/sources/iban-registry.txt",
+  "source_sha256": "ad13d9595a991790ad1a5a1363d574a43357c710e3bce2170f95c9bef8932df0",
+  "documentation": "docs/iban-spezifikation.md",
   "countries": {
     "AD": {
       "name": "Andorra",
@@ -25,7 +25,12 @@
         20
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AD1200012030200359100100",
+      "example_iban_print": "AD12 0001 2030 2003 5910 0100",
+      "effective_date": "Apr-07",
+      "last_update": "Mar-21"
     },
     "AE": {
       "name": "United Arab Emirates (The)",
@@ -45,7 +50,12 @@
         19
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AE070331234567890123456",
+      "example_iban_print": "AE07 0331 2345 6789 0123 456",
+      "effective_date": "Oct-11",
+      "last_update": "Feb-25"
     },
     "AL": {
       "name": "Albania",
@@ -68,7 +78,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AL47212110090000000235698741",
+      "example_iban_print": "AL47 2121 1009 0000 0002 3569 8741",
+      "effective_date": "Apr-09",
+      "last_update": "Jun-25"
     },
     "AT": {
       "name": "Austria",
@@ -88,7 +103,12 @@
         16
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AT611904300234573201",
+      "example_iban_print": "AT61 1904 3002 3457 3201",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "AZ": {
       "name": "Azerbaijan",
@@ -108,7 +128,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "AZ21NABZ00000000137010001944",
+      "example_iban_print": "AZ21 NABZ 0000 0000 1370 1000 1944",
+      "effective_date": "Jan-13",
+      "last_update": "Aug-16"
     },
     "BA": {
       "name": "Bosnia and Herzegovina",
@@ -131,7 +156,12 @@
         16
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BA391290079401028494",
+      "example_iban_print": "BA39 1290 0794 0102 8494",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "BE": {
       "name": "Belgium",
@@ -151,7 +181,12 @@
         12
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BE68539007547034",
+      "example_iban_print": "BE68 5390 0754 7034",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
     },
     "BG": {
       "name": "Bulgaria",
@@ -174,7 +209,12 @@
         18
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BG80BNBG96611020345678",
+      "example_iban_print": "BG80 BNBG 9661 1020 3456 78",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "BH": {
       "name": "Bahrain",
@@ -194,7 +234,12 @@
         18
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BH67BMAG00001299123456",
+      "example_iban_print": "BH67 BMAG 0000 1299 1234 56",
+      "effective_date": "Jan-12",
+      "last_update": "Jun-26"
     },
     "BI": {
       "name": "Burundi",
@@ -217,7 +262,12 @@
         23
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BI4210000100010000332045181",
+      "example_iban_print": "BI42 10000 10001 00003320451 81",
+      "effective_date": "Oct-21",
+      "last_update": "Oct-21"
     },
     "BR": {
       "name": "Brazil",
@@ -240,7 +290,12 @@
         25
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BR6699999A03000010009795493C1",
+      "example_iban_print": "BR66 9999 9A03 0000 1000 9795 493C 1",
+      "effective_date": "Aug-26",
+      "last_update": "Sep-26"
     },
     "BY": {
       "name": "Belarus",
@@ -260,7 +315,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "BY13NBRB3600900000002Z00AB00",
+      "example_iban_print": "BY13 NBRB 3600 9000 0000 2Z00 AB00",
+      "effective_date": "Jul-17",
+      "last_update": "Feb-24"
     },
     "CH": {
       "name": "Switzerland",
@@ -280,7 +340,12 @@
         17
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CH9300762011623852957",
+      "example_iban_print": "CH93 0076 2011 6238 5295 7",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "CR": {
       "name": "Costa Rica",
@@ -300,7 +365,12 @@
         18
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CR05015202001026284066",
+      "example_iban_print": "CR05 0152 0200 1026 2840 66",
+      "effective_date": "Jun-11",
+      "last_update": "Jan-19"
     },
     "CY": {
       "name": "Cyprus",
@@ -323,7 +393,12 @@
         24
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CY17002001280000001200527600",
+      "example_iban_print": "CY17 0020 0128 0000 0012 0052 7600",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-09"
     },
     "CZ": {
       "name": "Czechia",
@@ -343,7 +418,12 @@
         20
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "CZ6508000000192000145399",
+      "example_iban_print": "CZ65 0800 0000 1920 0014 5399",
+      "effective_date": "Apr-07",
+      "last_update": "Jun-25"
     },
     "DE": {
       "name": "Germany",
@@ -363,7 +443,12 @@
         18
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DE89370400440532013000",
+      "example_iban_print": "DE89 3704 0044 0532 0130 00",
+      "effective_date": "Jul-07",
+      "last_update": "Jan-11"
     },
     "DJ": {
       "name": "Djibouti",
@@ -386,7 +471,12 @@
         23
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DJ2100010000000154000100186",
+      "example_iban_print": "DJ21 0001 0000 0001 5400 0100 186",
+      "effective_date": "Apr-22",
+      "last_update": "May-22"
     },
     "DK": {
       "name": "Denmark",
@@ -406,7 +496,12 @@
         14
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DK5000400440116243",
+      "example_iban_print": "DK50 0040 0440 1162 43",
+      "effective_date": "Apr-07",
+      "last_update": "Nov-18"
     },
     "DO": {
       "name": "Dominican Republic",
@@ -426,7 +521,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "DO28BAGR00000001212453611324",
+      "example_iban_print": "DO28 BAGR 0000 0001 2124 5361 1324",
+      "effective_date": "Dec-10",
+      "last_update": "Sep-16"
     },
     "EE": {
       "name": "Estonia",
@@ -446,7 +546,12 @@
         16
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "EE382200221020145685",
+      "example_iban_print": "EE38 2200 2210 2014 5685",
+      "effective_date": "Apr-07",
+      "last_update": "Dec-24"
     },
     "EG": {
       "name": "Egypt",
@@ -469,7 +574,12 @@
         25
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "EG380019000500000000263180002",
+      "example_iban_print": "EG38 0019 0005 0000 0000 2631 8000 2",
+      "effective_date": "Jan-21",
+      "last_update": "Jan-20"
     },
     "ES": {
       "name": "Spain",
@@ -492,7 +602,12 @@
         20
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "ES9121000418450200051332",
+      "example_iban_print": "ES91 2100 0418 4502 0005 1332",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
     },
     "FI": {
       "name": "Finland",
@@ -512,12 +627,14 @@
         14
       ],
       "sepa": true,
+      "sepa_also_includes": "AX",
       "includes_territories": [
-        {
-          "code": "AX",
-          "name": ""
-        }
-      ]
+        "AX"
+      ],
+      "example_iban": "FI2112345600000785",
+      "example_iban_print": "FI21 1234 5600 0007 85",
+      "effective_date": "Dec-11",
+      "last_update": "Aug-16"
     },
     "FK": {
       "name": "Falkland Islands (Malvinas)",
@@ -537,7 +654,12 @@
         14
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "FK88SC123456789012",
+      "example_iban_print": "FK88 SC12 3456 7890 12",
+      "effective_date": "Jul-23",
+      "last_update": "Jul-23"
     },
     "FO": {
       "name": "Faroe Islands",
@@ -557,7 +679,12 @@
         14
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "FO6264600001631634",
+      "example_iban_print": "FO62 6460 0001 6316 34",
+      "effective_date": "Apr-07",
+      "last_update": "Feb-17"
     },
     "FR": {
       "name": "France",
@@ -577,56 +704,25 @@
         23
       ],
       "sepa": true,
+      "sepa_also_includes": "GF, GP, MQ, YT, RE, PM, BL, MF",
       "includes_territories": [
-        {
-          "code": "BL",
-          "name": ""
-        },
-        {
-          "code": "GF",
-          "name": ""
-        },
-        {
-          "code": "GP",
-          "name": ""
-        },
-        {
-          "code": "MF",
-          "name": ""
-        },
-        {
-          "code": "MQ",
-          "name": ""
-        },
-        {
-          "code": "NC",
-          "name": ""
-        },
-        {
-          "code": "PF",
-          "name": ""
-        },
-        {
-          "code": "PM",
-          "name": ""
-        },
-        {
-          "code": "RE",
-          "name": ""
-        },
-        {
-          "code": "TF",
-          "name": ""
-        },
-        {
-          "code": "WF",
-          "name": ""
-        },
-        {
-          "code": "YT",
-          "name": ""
-        }
-      ]
+        "GF",
+        "GP",
+        "MQ",
+        "RE",
+        "PF",
+        "TF",
+        "YT",
+        "NC",
+        "BL",
+        "MF",
+        "PM",
+        "WF"
+      ],
+      "example_iban": "FR1420041010050500013M02606",
+      "example_iban_print": "FR14 2004 1010 0505 0001 3M02 606",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
     },
     "GB": {
       "name": "United Kingdom",
@@ -649,20 +745,16 @@
         18
       ],
       "sepa": true,
+      "sepa_also_includes": null,
       "includes_territories": [
-        {
-          "code": "GG",
-          "name": ""
-        },
-        {
-          "code": "IM",
-          "name": ""
-        },
-        {
-          "code": "JE",
-          "name": ""
-        }
-      ]
+        "IM",
+        "JE",
+        "GG"
+      ],
+      "example_iban": "GB29NWBK60161331926819",
+      "example_iban_print": "GB29 NWBK 6016 1331 9268 19",
+      "effective_date": "Apr-07",
+      "last_update": "May-17"
     },
     "GE": {
       "name": "Georgia",
@@ -682,7 +774,12 @@
         18
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GE29NB0000000101904917",
+      "example_iban_print": "GE29 NB00 0000 0101 9049 17",
+      "effective_date": "May-10",
+      "last_update": "Apr-23"
     },
     "GI": {
       "name": "Gibraltar",
@@ -702,7 +799,12 @@
         19
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GI75NWBK000000007099453",
+      "example_iban_print": "GI75 NWBK 0000 0000 7099 453",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
     },
     "GL": {
       "name": "Greenland",
@@ -722,7 +824,12 @@
         14
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GL8964710001000206",
+      "example_iban_print": "GL89 6471 0001 0002 06",
+      "effective_date": "Apr-07",
+      "last_update": "Feb-17"
     },
     "GR": {
       "name": "Greece",
@@ -745,7 +852,12 @@
         23
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GR1601101250000000012300695",
+      "example_iban_print": "GR16 0110 1250 0000 0001 2300 695",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "GT": {
       "name": "Guatemala",
@@ -765,7 +877,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "GT82TRAJ01020000001210029690",
+      "example_iban_print": "GT82 TRAJ 0102 0000 0012 1002 9690",
+      "effective_date": "Sep-16",
+      "last_update": "Oct-16"
     },
     "HN": {
       "name": "Honduras",
@@ -785,7 +902,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "HN88CABF00000000000250005469",
+      "example_iban_print": "HN88 CABF 0000 0000 0002 5000 5469",
+      "effective_date": "Oct-24",
+      "last_update": "Dec-24"
     },
     "HR": {
       "name": "Croatia",
@@ -805,7 +927,12 @@
         17
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "HR1210010051863000160",
+      "example_iban_print": "HR12 1001 0051 8630 0016 0",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "HU": {
       "name": "Hungary",
@@ -828,7 +955,12 @@
         24
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "HU42117730161111101800000000",
+      "example_iban_print": "HU42 1177 3016 1111 1018 0000 0000",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
     },
     "IE": {
       "name": "Ireland",
@@ -851,7 +983,12 @@
         18
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IE29AIBK93115212345678",
+      "example_iban_print": "IE29 AIBK 9311 5212 3456 78",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "IL": {
       "name": "Israel",
@@ -874,7 +1011,12 @@
         19
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IL620108000000099999999",
+      "example_iban_print": "IL62 0108 0000 0009 9999 999",
+      "effective_date": "Jul-07",
+      "last_update": "Sep-16"
     },
     "IQ": {
       "name": "Iraq",
@@ -897,7 +1039,12 @@
         19
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IQ98NBIQ850123456789012",
+      "example_iban_print": "IQ98 NBIQ 8501 2345 6789 012",
+      "effective_date": "Jan-17",
+      "last_update": "Nov-16"
     },
     "IS": {
       "name": "Iceland",
@@ -920,7 +1067,12 @@
         22
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IS140159260076545510730339",
+      "example_iban_print": "IS14 0159 2600 7654 5510 7303 39",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "IT": {
       "name": "Italy",
@@ -943,7 +1095,12 @@
         23
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "IT60X0542811101000000123456",
+      "example_iban_print": "IT60 X054 2811 1010 0000 0123 456",
+      "effective_date": "Jul-07",
+      "last_update": "Mar-13"
     },
     "JO": {
       "name": "Jordan",
@@ -966,7 +1123,12 @@
         26
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "JO94CBJO0010000000000131000302",
+      "example_iban_print": "JO94 CBJO 0010 0000 0000 0131 0003 02",
+      "effective_date": "Feb-14",
+      "last_update": "Oct-25"
     },
     "KW": {
       "name": "Kuwait",
@@ -986,7 +1148,12 @@
         26
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "KW81CBKU0000000000001234560101",
+      "example_iban_print": "KW81 CBKU 0000 0000 0000 1234 5601 01",
+      "effective_date": "Jan-11",
+      "last_update": "Oct-25"
     },
     "KZ": {
       "name": "Kazakhstan",
@@ -1006,7 +1173,12 @@
         16
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "KZ86125KZT5004100100",
+      "example_iban_print": "KZ86 125K ZT50 0410 0100",
+      "effective_date": "Sep-10",
+      "last_update": "Oct-25"
     },
     "LB": {
       "name": "Lebanon",
@@ -1026,7 +1198,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LB62099900000001001901229114",
+      "example_iban_print": "LB62 0999 0000 0001 0019 0122 9114",
+      "effective_date": "Jan-10",
+      "last_update": "Sep-16"
     },
     "LC": {
       "name": "Saint Lucia",
@@ -1046,7 +1223,12 @@
         28
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LC55HEMM000100010012001200023015",
+      "example_iban_print": "LC55 HEMM 0001 0001 0012 0012 0002 3015",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-16"
     },
     "LI": {
       "name": "Liechtenstein",
@@ -1066,7 +1248,12 @@
         17
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LI21088100002324013AA",
+      "example_iban_print": "LI21 0881 0000 2324 013A A",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "LT": {
       "name": "Lithuania",
@@ -1086,7 +1273,12 @@
         16
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LT121000011101001000",
+      "example_iban_print": "LT12 1000 0111 0100 1000",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "LU": {
       "name": "Luxembourg",
@@ -1106,7 +1298,12 @@
         16
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LU280019400644750000",
+      "example_iban_print": "LU28 0019 4006 4475 0000",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "LV": {
       "name": "Latvia",
@@ -1126,7 +1323,12 @@
         17
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LV80BANK0000435195001",
+      "example_iban_print": "LV80 BANK 0000 4351 9500 1",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "LY": {
       "name": "Libya",
@@ -1149,7 +1351,12 @@
         21
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "LY83002048000020100120361",
+      "example_iban_print": "LY83 002 048 000020100120361",
+      "effective_date": "Jan-21",
+      "last_update": "Sep-20"
     },
     "MC": {
       "name": "Monaco",
@@ -1172,7 +1379,12 @@
         23
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MC5811222000010123456789030",
+      "example_iban_print": "MC58 1122 2000 0101 2345 6789 030",
+      "effective_date": "Jan-08",
+      "last_update": "Oct-25"
     },
     "MD": {
       "name": "Moldova, Republic of",
@@ -1192,7 +1404,12 @@
         20
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MD24AG000225100013104168",
+      "example_iban_print": "MD24 AG00 0225 1000 1310 4168",
+      "effective_date": "Jan-16",
+      "last_update": "Oct-25"
     },
     "ME": {
       "name": "Montenegro",
@@ -1212,7 +1429,12 @@
         18
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "ME25505000012345678951",
+      "example_iban_print": "ME25 5050 0001 2345 6789 51",
+      "effective_date": "Apr-07",
+      "last_update": "May-10"
     },
     "MK": {
       "name": "North Macedonia",
@@ -1232,7 +1454,12 @@
         15
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MK07250120000058984",
+      "example_iban_print": "MK07 2501 2000 0058 984",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "MN": {
       "name": "Mongolia",
@@ -1252,7 +1479,12 @@
         16
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MN121234123456789123",
+      "example_iban_print": "MN12 1234 1234 5678 9123",
+      "effective_date": "Apr-23",
+      "last_update": "Apr-23"
     },
     "MR": {
       "name": "Mauritania",
@@ -1275,7 +1507,12 @@
         23
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MR1300020001010000123456753",
+      "example_iban_print": "MR13 0002 0001 0100 0012 3456 753",
+      "effective_date": "Jan-12",
+      "last_update": "Sep-16"
     },
     "MT": {
       "name": "Malta",
@@ -1298,7 +1535,12 @@
         27
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MT84MALT011000012345MTLCAST001S",
+      "example_iban_print": "MT84 MALT 0110 0001 2345 MTLC AST0 01S",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "MU": {
       "name": "Mauritius",
@@ -1321,7 +1563,12 @@
         26
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "MU17BOMM0101101030300200000MUR",
+      "example_iban_print": "MU17 BOMM 0101 1010 3030 0200 000M UR",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "NI": {
       "name": "Nicaragua",
@@ -1341,7 +1588,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "NI45BAPR00000013000003558124",
+      "example_iban_print": "NI45 BAPR 0000 0013 0000 0355 8124",
+      "effective_date": "Apr-23",
+      "last_update": "Dec-24"
     },
     "NL": {
       "name": "Netherlands (The)",
@@ -1361,7 +1613,12 @@
         14
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "NL91ABNA0417164300",
+      "example_iban_print": "NL91 ABNA 0417 1643 00",
+      "effective_date": "Apr-07",
+      "last_update": "Sep-20"
     },
     "NO": {
       "name": "Norway",
@@ -1381,7 +1638,12 @@
         11
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "NO9386011117947",
+      "example_iban_print": "NO93 8601 1117 947",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-09"
     },
     "OM": {
       "name": "Oman",
@@ -1401,7 +1663,12 @@
         19
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "OM810180000001299123456",
+      "example_iban_print": "OM81 0180 0000 0129 9123 456",
+      "effective_date": "Mar-24",
+      "last_update": "Mar-24"
     },
     "PK": {
       "name": "Pakistan",
@@ -1421,7 +1688,12 @@
         20
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "PK36SCBL0000001123456702",
+      "example_iban_print": "PK36 SCBL 0000 0011 2345 6702",
+      "effective_date": "Dec-12",
+      "last_update": "Oct-25"
     },
     "PL": {
       "name": "Poland",
@@ -1441,7 +1713,12 @@
         24
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "PL61109010140000071219812874",
+      "example_iban_print": "PL61 1090 1014 0000 0712 1981 2874",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "PS": {
       "name": "Palestine, State of",
@@ -1461,7 +1738,12 @@
         25
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "PS92PALS000000000400123456702",
+      "example_iban_print": "PS92 PALS 0000 0000 0400 1234 5670 2",
+      "effective_date": "Jul-12",
+      "last_update": "Oct-25"
     },
     "PT": {
       "name": "Portugal",
@@ -1481,7 +1763,12 @@
         21
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": "Azores, Madeira",
+      "includes_territories": [],
+      "example_iban": "PT50000201231234567890154",
+      "example_iban_print": "PT50 0002 0123 1234 5678 9015 4",
+      "effective_date": "Apr-07",
+      "last_update": "Dec-25"
     },
     "QA": {
       "name": "Qatar",
@@ -1501,7 +1788,12 @@
         25
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "QA58DOHB00001234567890ABCDEFG",
+      "example_iban_print": "QA58 DOHB 0000 1234 5678 90AB CDEF G",
+      "effective_date": "Jan-14",
+      "last_update": "Jan-14"
     },
     "RO": {
       "name": "Romania",
@@ -1521,7 +1813,12 @@
         20
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "RO49AAAA1B31007593840000",
+      "example_iban_print": "RO49 AAAA 1B31 0075 9384 0000",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "RS": {
       "name": "Serbia",
@@ -1541,7 +1838,12 @@
         18
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "RS35260005601001611379",
+      "example_iban_print": "RS35 2600 0560 1001 6113 79",
+      "effective_date": "Apr-07",
+      "last_update": "Mar-17"
     },
     "RU": {
       "name": "Russian Federation",
@@ -1564,7 +1866,12 @@
         29
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "RU0304452522540817810538091310419",
+      "example_iban_print": "RU03 0445 2522 5408 1781 0538 0913 1041 9",
+      "effective_date": "Apr-23",
+      "last_update": "Oct-25"
     },
     "SA": {
       "name": "Saudi Arabia",
@@ -1584,7 +1891,12 @@
         20
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SA0380000000608010167519",
+      "example_iban_print": "SA03 8000 0000 6080 1016 7519",
+      "effective_date": "Jul-16",
+      "last_update": "Sep-16"
     },
     "SC": {
       "name": "Seychelles",
@@ -1607,7 +1919,12 @@
         27
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SC18SSCB11010000000000001497USD",
+      "example_iban_print": "SC18 SSCB 1101 0000 0000 0000 1497 USD",
+      "effective_date": "Oct-16",
+      "last_update": "Oct-19"
     },
     "SD": {
       "name": "Sudan",
@@ -1627,7 +1944,12 @@
         14
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SD2129010501234001",
+      "example_iban_print": "SD21 2901 0501 2340 01",
+      "effective_date": "Jul-21",
+      "last_update": "Oct-21"
     },
     "SE": {
       "name": "Sweden",
@@ -1647,7 +1969,12 @@
         20
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SE4550000000058398257466",
+      "example_iban_print": "SE45 5000 0000 0583 9825 7466",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-09"
     },
     "SI": {
       "name": "Slovenia",
@@ -1667,7 +1994,12 @@
         15
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SI56263300012039086",
+      "example_iban_print": "SI56 2633 0001 2039 086",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-16"
     },
     "SK": {
       "name": "Slovakia",
@@ -1687,7 +2019,12 @@
         20
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SK3112000000198742637541",
+      "example_iban_print": "SK31 1200 0000 1987 4263 7541",
+      "effective_date": "Apr-07",
+      "last_update": "Aug-16"
     },
     "SM": {
       "name": "San Marino",
@@ -1710,7 +2047,12 @@
         23
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SM86U0322509800000000270100",
+      "example_iban_print": "SM86 U032 2509 8000 0000 0270 100",
+      "effective_date": "Aug-07",
+      "last_update": "Aug-16"
     },
     "SO": {
       "name": "Somalia",
@@ -1733,7 +2075,12 @@
         19
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SO211000001001000100141",
+      "example_iban_print": "SO21 1000 0010 0100 0100 141",
+      "effective_date": "Jan-23",
+      "last_update": "Feb-25"
     },
     "ST": {
       "name": "Sao Tome and Principe",
@@ -1756,7 +2103,12 @@
         21
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "ST23000100010051845310146",
+      "example_iban_print": "ST23 0001 0001 0051 8453 1014 6",
+      "effective_date": "Mar-20",
+      "last_update": "May-20"
     },
     "SV": {
       "name": "El Salvador",
@@ -1776,7 +2128,12 @@
         24
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "SV62CENR00000000000000700025",
+      "example_iban_print": "SV 62 CENR 00000000000000700025",
+      "effective_date": "Dec-16",
+      "last_update": "Mar-21"
     },
     "TL": {
       "name": "Timor-Leste",
@@ -1796,7 +2153,12 @@
         19
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "TL380080012345678910157",
+      "example_iban_print": "TL38 0080 0123 4567 8910 157",
+      "effective_date": "Sep-14",
+      "last_update": "Nov-14"
     },
     "TN": {
       "name": "Tunisia",
@@ -1819,7 +2181,12 @@
         20
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "TN5910006035183598478831",
+      "example_iban_print": "TN59 1000 6035 1835 9847 8831",
+      "effective_date": "Apr-07",
+      "last_update": "May-16"
     },
     "TR": {
       "name": "Turkiye",
@@ -1839,7 +2206,12 @@
         22
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "TR330006100519786457841326",
+      "example_iban_print": "TR33 0006 1005 1978 6457 8413 26",
+      "effective_date": "Apr-07",
+      "last_update": "Oct-25"
     },
     "UA": {
       "name": "Ukraine",
@@ -1859,7 +2231,12 @@
         25
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "UA213223130000026007233566001",
+      "example_iban_print": "UA21 3223 1300 0002 6007 2335 6600 1",
+      "effective_date": "Feb-16",
+      "last_update": "Oct-25"
     },
     "VA": {
       "name": "Holy See",
@@ -1879,7 +2256,12 @@
         18
       ],
       "sepa": true,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "VA59001123000012345678",
+      "example_iban_print": "VA59 001 1230 0001 2345 678",
+      "effective_date": "Mar-19",
+      "last_update": "Oct-25"
     },
     "VG": {
       "name": "Virgin Islands (British)",
@@ -1899,7 +2281,12 @@
         20
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "VG96VPVG0000012345678901",
+      "example_iban_print": "VG96 VPVG 0000 0123 4567 8901",
+      "effective_date": "Apr-12",
+      "last_update": "Oct-25"
     },
     "XK": {
       "name": "Kosovo",
@@ -1922,7 +2309,12 @@
         16
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "XK051212012345678906",
+      "example_iban_print": "XK05 1212 0123 4567 8906",
+      "effective_date": "Sep-14",
+      "last_update": "Sep-16"
     },
     "YE": {
       "name": "Yemen",
@@ -1945,7 +2337,12 @@
         26
       ],
       "sepa": false,
-      "includes_territories": []
+      "sepa_also_includes": null,
+      "includes_territories": [],
+      "example_iban": "YE15CBYE0001018861234567891234",
+      "example_iban_print": "YE15 CBYE 0001 0188 6123 4567 8912 34",
+      "effective_date": "Jul-24",
+      "last_update": "Jul-24"
     }
   }
 }
