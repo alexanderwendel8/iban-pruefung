@@ -3,6 +3,7 @@ import { papierform, pruefeIban } from "./pruefung.js";
 const eingabe = document.getElementById("iban");
 const ergebnis = document.getElementById("ergebnis");
 const liste = document.getElementById("schritte");
+const details = document.getElementById("details");
 
 const STATUSTEXT = { ok: "bestanden", fehler: "nicht bestanden", offen: "noch nicht geprüft" };
 
@@ -21,7 +22,10 @@ function zeige(registry) {
     ? ""
     : pruefung.gueltig
       ? `${papierform(pruefung.iban)} hat alle Prüfschritte bestanden.`
-      : "Diese IBAN ist nicht gültig.";
+      : `Diese IBAN ist nicht gültig. ${pruefung.schritte.find((s) => s.status === "fehler").meldung}`;
+
+  // Ohne Details bleibt nur das Ergebnis sichtbar
+  liste.hidden = !details.checked;
 
   liste.replaceChildren(
     ...pruefung.schritte.map((schritt, i) => {
@@ -52,6 +56,7 @@ try {
   const registry = (await antwort.json()).countries;
   document.getElementById("anzahl").textContent = Object.keys(registry).length;
   eingabe.addEventListener("input", () => zeige(registry));
+  details.addEventListener("change", () => zeige(registry));
   zeige(registry);
 } catch (fehler) {
   const hinweis = document.getElementById("ladefehler");
