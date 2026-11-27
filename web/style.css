@@ -17,8 +17,7 @@ body {
 }
 main, footer { max-width: 40rem; margin: 0 auto; padding: 0 1rem; }
 main { padding-top: 2.5rem; }
-h1 { font-size: 1.75rem; margin: 0 0 .25rem; }
-.einleitung { color: var(--leise); margin: 0 0 1.75rem; }
+h1 { font-size: 1.75rem; margin: 0 0 1.5rem; }
 label { display: block; font-weight: 600; margin-bottom: .35rem; }
 input[type="text"] {
   width: 100%; padding: .8rem .9rem; border: 1px solid var(--rand); border-radius: .5rem;
@@ -59,5 +58,6 @@ dt { color: var(--leise); }
 dd { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; }
 .ladefehler { color: var(--fehler); }
 footer a { color: inherit; }
+footer p { margin: 0 0 .6rem; }
 footer { color: var(--leise); font-size: .85rem; padding-top: 2rem; padding-bottom: 2rem; }
 @media (max-width: 30rem) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .3rem; } }
