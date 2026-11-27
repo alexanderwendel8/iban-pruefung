@@ -42,13 +42,14 @@ export const SCHRITTE = [
       if (!land) {
         return fehler(`Für den Ländercode ${code} ist kein IBAN-Format registriert.`);
       }
+      const name = laendername(code, land);
       const details = [
-        ["Land", `${land.name} (${code})`],
+        ["Land", `${name} (${code})`],
         ["Erwartet", `${land.iban_length} Zeichen`],
         ["Eingegeben", `${iban.length} Zeichen`],
       ];
       const differenz = iban.length - land.iban_length;
-      if (differenz === 0) return ok(`${iban.length} Zeichen, wie für ${land.name} vorgesehen.`, details);
+      if (differenz === 0) return ok(`${iban.length} Zeichen, wie für ${name} vorgesehen.`, details);
       const n = Math.abs(differenz);
       return fehler(
         `${n} Zeichen zu ${differenz > 0 ? "viel" : "wenig"}: ${iban.length} statt ${land.iban_length}.`,
@@ -98,7 +99,7 @@ export const SCHRITTE = [
         ]),
       ];
       const falsch = abschnitte.filter((a) => !a.passt);
-      if (!falsch.length) return ok(`Der Aufbau entspricht dem Format für ${land.name}.`, details);
+      if (!falsch.length) return ok(`Der Aufbau entspricht dem Format für ${laendername(iban.slice(0, 2), land)}.`, details);
       const a = falsch[0];
       const weitere = falsch.length > 1 ? ` Insgesamt passen ${falsch.length} Abschnitte nicht.` : "";
       return fehler(
@@ -138,6 +139,26 @@ function zerlege(struktur, iban) {
 }
 
 /**
+ * Liest Bankleitzahl und, falls das Land eine ausweist, die Filialkennung aus
+ * der IBAN. Die Positionen der Registry beziehen sich auf die BBAN (ab Stelle 5).
+ */
+export function bankdaten(iban, land) {
+  const teil = (bereich) => (bereich ? iban.slice(4 + bereich[0], 4 + bereich[1]) : null);
+  return {
+    bankleitzahl: teil(land.bank_code),
+    filiale: teil(land.branch_code),
+    kontonummer: teil(land.account_code),
+  };
+}
+
+const regionen = new Intl.DisplayNames(["de"], { type: "region", fallback: "none" });
+
+/** Deutscher Ländername zum IBAN-Präfix; sonst der englische Name der Registry. */
+export function laendername(code, land) {
+  return regionen.of(code) ?? land.name;
+}
+
+/**
  * Führt die Schritte der Reihe nach aus. Nach dem ersten Fehler werden die
  * folgenden Schritte nicht mehr ausgeführt (Status "offen").
  */
@@ -152,5 +173,15 @@ export function pruefeIban(eingabe, registry) {
     weiter = ergebnis.status === "ok";
     return { ...kopf, ...ergebnis };
   });
-  return { iban, land, schritte, leer: iban.length === 0, gueltig: weiter };
+  return {
+    iban,
+    land,
+    schritte,
+    leer: iban.length === 0,
+    gueltig: weiter,
+    // Angaben nur aus einer vollständig geprüften IBAN lesen
+    angaben: weiter
+      ? { land: laendername(iban.slice(0, 2), land), sepa: land.sepa, ...bankdaten(iban, land) }
+      : null,
+  };
 }

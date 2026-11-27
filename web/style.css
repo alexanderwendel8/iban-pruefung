@@ -27,6 +27,7 @@ input[type="text"] {
 }
 input::placeholder { color: var(--leise); opacity: .6; }
 input:focus-visible { outline: 2px solid var(--akzent); outline-offset: 1px; }
+.angaben { margin: 0 0 1.25rem; font-size: 1rem; }
 .schalter { display: inline-flex; align-items: center; gap: .5rem; font-weight: 400; margin-bottom: 1rem; cursor: pointer; }
 .schalter input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--akzent); }
 .ergebnis { min-height: 1.5rem; margin: .6rem 0 1rem; font-weight: 600; overflow-wrap: anywhere; }

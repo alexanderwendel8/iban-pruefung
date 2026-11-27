@@ -4,6 +4,7 @@ const eingabe = document.getElementById("iban");
 const ergebnis = document.getElementById("ergebnis");
 const liste = document.getElementById("schritte");
 const details = document.getElementById("details");
+const angaben = document.getElementById("angaben");
 
 const STATUSTEXT = { ok: "bestanden", fehler: "nicht bestanden", offen: "noch nicht geprüft" };
 
@@ -23,6 +24,21 @@ function zeige(registry) {
     : pruefung.gueltig
       ? `${papierform(pruefung.iban)} hat alle Prüfschritte bestanden.`
       : `Diese IBAN ist nicht gültig. ${pruefung.schritte.find((s) => s.status === "fehler").meldung}`;
+
+  angaben.hidden = !pruefung.gueltig;
+  if (pruefung.gueltig) {
+    const a = pruefung.angaben;
+    const zeilen = [
+      ["Land", a.land],
+      ["SEPA-Teilnahme", a.sepa ? "ja" : "nein"],
+      ["Bankleitzahl", a.bankleitzahl],
+      ["Filiale", a.filiale], // null bei Ländern ohne Filialkennung
+      ["Kontonummer", a.kontonummer],
+    ].filter(([, wert]) => wert !== null);
+    angaben.replaceChildren(
+      ...zeilen.flatMap(([name, wert]) => [element("dt", "", name), element("dd", "", wert)]),
+    );
+  }
 
   // Ohne Details bleibt nur das Ergebnis sichtbar
   liste.hidden = !details.checked;

@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
-import { papierform, pruefeIban, SCHRITTE } from "./pruefung.js";
+import { bankdaten, laendername, papierform, pruefeIban, SCHRITTE } from "./pruefung.js";
 
 const lies = (pfad) => JSON.parse(readFileSync(new URL(pfad, import.meta.url)));
 const registry = lies("../spec/iban-registry.json").countries;
@@ -56,5 +56,49 @@ test("Strukturschritt urteilt wie die Regex der Registry", () => {
       const schritt = SCHRITTE.find((s) => s.id === "struktur").pruefe(getauscht, land);
       assert.equal(schritt.status === "ok", erwartet, getauscht);
     }
+  }
+});
+
+test("Angaben zur IBAN werden nur bei gültiger IBAN ausgegeben", () => {
+  assert.deepEqual(pruefeIban("DE89 3704 0044 0532 0130 00", registry).angaben, {
+    land: "Deutschland",
+    sepa: true,
+    bankleitzahl: "37040044",
+    filiale: null,
+    kontonummer: "0532013000",
+  });
+  assert.deepEqual(pruefeIban("GB29NWBK60161331926819", registry).angaben, {
+    land: "Vereinigtes Königreich",
+    sepa: true,
+    bankleitzahl: "NWBK",
+    filiale: "601613",
+    kontonummer: "31926819",
+  });
+  // Bankkennung beginnt nicht an der ersten Stelle der BBAN
+  assert.deepEqual(pruefeIban("IT60X0542811101000000123456", registry).angaben, {
+    land: "Italien",
+    sepa: true,
+    bankleitzahl: "05428",
+    filiale: "11101",
+    kontonummer: "000000123456",
+  });
+  assert.equal(pruefeIban("BR6699999A03000010009795493C1", registry).angaben.sepa, false);
+  assert.equal(pruefeIban("DE89370400440532013001", registry).angaben, null);
+});
+
+test("jedes Präfix hat einen deutschen Ländernamen", () => {
+  for (const [code, land] of Object.entries(registry)) {
+    const name = laendername(code, land);
+    assert.ok(name && name !== code, code);
+  }
+});
+
+test("jedes Land liefert eine Bankleitzahl in der registrierten Länge", () => {
+  for (const iban of vektoren.valid) {
+    const land = registry[iban.slice(0, 2)];
+    const { bankleitzahl, filiale, kontonummer } = bankdaten(iban, land);
+    assert.equal(bankleitzahl.length, land.bank_code[1] - land.bank_code[0], iban);
+    assert.equal(filiale === null, land.branch_code === null, iban);
+    assert.equal(kontonummer.length, land.account_code[1] - land.account_code[0], iban);
   }
 });
