@@ -10,8 +10,6 @@
 <body>
   <main>
     <h1>IBAN-Prüfung</h1>
-    <p class="einleitung">Die IBAN wird Schritt für Schritt in deinem Browser geprüft. Bei österreichischen IBANs wird zusätzlich die Bank im BIC-Verzeichnis nachgeschlagen.</p>
-
     <label for="iban">IBAN</label>
     <input id="iban" type="text" inputmode="text" autocomplete="off" autocapitalize="characters"
            spellcheck="false" placeholder="DE89 3704 0044 0532 0130 00" aria-describedby="ergebnis">
@@ -24,9 +22,12 @@
     <p id="ladefehler" class="ladefehler" hidden></p>
   </main>
   <footer>
+    <p>Die IBAN wird Schritt für Schritt in deinem Browser geprüft. Bei österreichischen IBANs wird zusätzlich die Bank im BIC-Verzeichnis nachgeschlagen.</p>
+    <p>
     Formate aus der SWIFT IBAN Registry (<span id="anzahl">–</span> Länder).
     Bankdaten für Österreich aus dem <a href="https://alexanderwendel8.github.io/bic-verzeichnis/">BIC-Verzeichnis</a> (Quelle: OeNB).
     Die Prüfung sagt nichts darüber, ob das Konto existiert.
+    </p>
   </footer>
   <script type="module" src="web/app.js"></script>
 </body>
