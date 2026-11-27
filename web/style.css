@@ -1,12 +1,12 @@
 :root {
   color-scheme: light dark;
   --bg: #f6f7f9; --flaeche: #fff; --text: #16202b; --leise: #5b6875; --rand: #d5dbe2;
-  --ok: #17703f; --ok-bg: #e5f4ea; --fehler: #b3261e; --fehler-bg: #fbe9e7; --akzent: #1f5fbf;
+  --ok: #17703f; --ok-bg: #e5f4ea; --fehler: #b3261e; --fehler-bg: #fbe9e7; --akzent: #1f5fbf; --unklar: #8a5a00;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #12161b; --flaeche: #1b2129; --text: #e8edf2; --leise: #9aa7b4; --rand: #323b46;
-    --ok: #6fd39a; --ok-bg: #16311f; --fehler: #ff9d94; --fehler-bg: #3a1c1a; --akzent: #8ab4f8;
+    --ok: #6fd39a; --ok-bg: #16311f; --fehler: #ff9d94; --fehler-bg: #3a1c1a; --akzent: #8ab4f8; --unklar: #f0c36b;
   }
 }
 * { box-sizing: border-box; }
@@ -33,6 +33,8 @@ input:focus-visible { outline: 2px solid var(--akzent); outline-offset: 1px; }
 .ergebnis { min-height: 1.5rem; margin: .6rem 0 1rem; font-weight: 600; overflow-wrap: anywhere; }
 .ergebnis[data-status="ok"] { color: var(--ok); }
 .ergebnis[data-status="fehler"] { color: var(--fehler); }
+.ergebnis[data-status="unklar"] { color: var(--unklar); }
+.ergebnis[data-status="offen"] { color: var(--leise); font-weight: 400; }
 .schritte { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
 .schritt {
   background: var(--flaeche); border: 1px solid var(--rand); border-left-width: 4px;
@@ -40,7 +42,8 @@ input:focus-visible { outline: 2px solid var(--akzent); outline-offset: 1px; }
 }
 .schritt[data-status="ok"] { border-left-color: var(--ok); }
 .schritt[data-status="fehler"] { border-left-color: var(--fehler); }
-.schritt[data-status="offen"] { color: var(--leise); }
+.schritt[data-status="offen"], .schritt[data-status="laeuft"] { color: var(--leise); }
+.schritt[data-status="unklar"] { border-left-color: var(--unklar); }
 .kopf { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
 .kopf h2 { font-size: 1.05rem; margin: 0; flex: 1; }
 .nummer {
@@ -55,5 +58,6 @@ dl { display: grid; grid-template-columns: auto 1fr; gap: .15rem 1rem; margin: .
 dt { color: var(--leise); }
 dd { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; }
 .ladefehler { color: var(--fehler); }
+footer a { color: inherit; }
 footer { color: var(--leise); font-size: .85rem; padding-top: 2rem; padding-bottom: 2rem; }
 @media (max-width: 30rem) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .3rem; } }
