@@ -64,3 +64,41 @@ export function bankzeilen(ergebnis) {
     ["Ort", ort || null],
   ].filter(([, wert]) => wert);
 }
+
+const KOPF = {
+  id: "bank",
+  titel: "Bank",
+  beschreibung: "Die Bankleitzahl muss im Bankverzeichnis des Landes stehen.",
+};
+
+/**
+ * Prüfschritt „Bank“ im selben Format wie die Schritte aus pruefung.js.
+ * `ergebnis` ist das Ergebnis von `suche` oder einer der Zustände
+ *   null                 – Schritt noch nicht erreicht
+ *   "laeuft"             – Abfrage unterwegs
+ *   "nicht_erreichbar"   – Verzeichnis nicht erreichbar
+ * Status: ok | fehler | offen | laeuft | entfaellt (kein Verzeichnis) | unklar.
+ */
+export function bankschritt(ergebnis, land, bankleitzahl) {
+  const schritt = (status, meldung = "", details = []) => ({ ...KOPF, status, meldung, details });
+  if (ergebnis === null) return schritt("offen");
+  if (ergebnis === "laeuft") return schritt("laeuft", "Die Bank wird im Bankverzeichnis nachgeschlagen …");
+  if (ergebnis === "nicht_erreichbar") {
+    return schritt("unklar", "Das Bankverzeichnis ist nicht erreichbar, die Bank konnte nicht geprüft werden.");
+  }
+  if (ergebnis.status === "kein_verzeichnis") {
+    return schritt("entfaellt", `Für ${land} liegt kein Bankverzeichnis vor, die Bank wird nicht geprüft.`);
+  }
+  const details = [["Bankleitzahl", bankleitzahl], ...bankzeilen(ergebnis)];
+  if (ergebnis.status === "unbekannt") {
+    return schritt("fehler", `Die Bankleitzahl ${bankleitzahl} steht nicht im Bankverzeichnis für ${land}.`, [
+      ["Bankleitzahl", bankleitzahl],
+    ]);
+  }
+  const { bank } = ergebnis;
+  if (bank.status === "entfernt") {
+    const seit = bank.entfernt_am ? ` seit ${datum(bank.entfernt_am)}` : "";
+    return schritt("fehler", `Die Bank mit der Bankleitzahl ${bankleitzahl} steht${seit} nicht mehr im Bankverzeichnis.`, details);
+  }
+  return schritt("ok", `Die Bankleitzahl ${bankleitzahl} gehört zu ${bank.name}.`, details);
+}

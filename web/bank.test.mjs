@@ -1,7 +1,7 @@
 // node --test web/bank.test.mjs
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { BASIS, bankverzeichnis, bankzeilen } from "./bank.js";
+import { BASIS, bankschritt, bankverzeichnis, bankzeilen } from "./bank.js";
 
 const ERSTE = {
   land: "AT",
@@ -66,4 +66,22 @@ test("Anzeigezeilen", () => {
     ["Bank", `${ERSTE.name} (seit 01.03.2026 nicht mehr im Verzeichnis)`],
     ["BIC", "GIBAATWWXXX"],
   ]);
+});
+
+test("Prüfschritt Bank", () => {
+  const status = (ergebnis) => bankschritt(ergebnis, "Österreich", "20111").status;
+  assert.equal(status(null), "offen");
+  assert.equal(status("laeuft"), "laeuft");
+  assert.equal(status("nicht_erreichbar"), "unklar");
+  assert.equal(status({ status: "kein_verzeichnis" }), "entfaellt");
+  assert.equal(status({ status: "gefunden", bank: ERSTE }), "ok");
+
+  const unbekannt = bankschritt({ status: "unbekannt" }, "Österreich", "19043");
+  assert.equal(unbekannt.status, "fehler");
+  assert.equal(unbekannt.meldung, "Die Bankleitzahl 19043 steht nicht im Bankverzeichnis für Österreich.");
+
+  const alt = { ...ERSTE, status: "entfernt", entfernt_am: "2026-03-01" };
+  const entfernt = bankschritt({ status: "gefunden", bank: alt }, "Österreich", "20111");
+  assert.equal(entfernt.status, "fehler");
+  assert.match(entfernt.meldung, /seit 01\.03\.2026 nicht mehr im Bankverzeichnis/);
 });

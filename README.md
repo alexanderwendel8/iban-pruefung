@@ -2,7 +2,7 @@
 
 Prüft IBANs nach ISO 13616 Schritt für Schritt, als statische Seite für GitHub Pages.
 
-- [Weboberfläche](index.html) – Schritte bisher: Länge, Prüfziffer, Struktur
+- [Weboberfläche](index.html) – Schritte bisher: Länge, Prüfziffer, Struktur, Bank (derzeit nur Österreich)
 - [IBAN-Spezifikation](docs/iban-spezifikation.md)
 - [Länderformate (JSON)](spec/iban-registry.json), erzeugt aus der [SWIFT IBAN Registry](spec/sources/iban-registry.txt)
 - [Testvektoren (JSON)](spec/test-vectors.json)
