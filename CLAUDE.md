@@ -12,5 +12,6 @@ Weboberfläche (statisch, für GitHub Pages aus dem Repo-Wurzelverzeichnis, ohne
 
 - `index.html`, `web/app.js`, `web/style.css` – Oberfläche; lädt `spec/iban-registry.json` zur Laufzeit.
 - `web/pruefung.js` – Prüflogik ohne DOM. Die Prüfung läuft als Liste `SCHRITTE` der Reihe nach; ein neuer Prüfschritt ist ein weiterer Eintrag dort, die Oberfläche zeigt ihn automatisch an.
-- `node --test web/pruefung.test.mjs` – prüft die Logik gegen `spec/test-vectors.json`.
+- `web/bank.js` – schlägt bei gültiger IBAN die Bank im BIC-Verzeichnis nach (API von `alexanderwendel8/bic-verzeichnis`, derzeit nur Österreich; welche Länder es gibt, sagt deren `index.json`). Nur Land und Bankleitzahl gehen ins Netz, nie die ganze IBAN.
+- `node --test web/*.test.mjs` – prüft die Logik gegen `spec/test-vectors.json` und die Bankabfrage ohne Netz.
 - Lokal ansehen: `python3 -m http.server` im Wurzelverzeichnis (Module und `fetch` brauchen HTTP, `file://` reicht nicht).

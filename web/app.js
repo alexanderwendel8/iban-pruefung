@@ -1,4 +1,7 @@
+import { bankverzeichnis, bankzeilen } from "./bank.js";
 import { papierform, pruefeIban } from "./pruefung.js";
+
+const sucheBank = bankverzeichnis();
 
 const eingabe = document.getElementById("iban");
 const ergebnis = document.getElementById("ergebnis");
@@ -15,6 +18,24 @@ function element(tag, klasse, text) {
   return e;
 }
 
+function zeigeAngaben(zeilen) {
+  angaben.replaceChildren(
+    ...zeilen.flatMap(([name, wert]) => [element("dt", "", name), element("dd", "", wert)]),
+  );
+}
+
+/** Schlägt die Bank nach und hängt ihre Daten an, sofern die Eingabe noch dieselbe ist. */
+async function ergaenzeBank(iban, bankleitzahl, zeilen) {
+  angaben.dataset.iban = iban;
+  let bank;
+  try {
+    bank = bankzeilen(await sucheBank(iban.slice(0, 2), bankleitzahl));
+  } catch {
+    bank = [["Bank", "Bankverzeichnis nicht erreichbar"]];
+  }
+  if (angaben.dataset.iban === iban && !angaben.hidden) zeigeAngaben([...zeilen, ...bank]);
+}
+
 function zeige(registry) {
   const pruefung = pruefeIban(eingabe.value, registry);
 
@@ -26,6 +47,7 @@ function zeige(registry) {
       : `Diese IBAN ist nicht gültig. ${pruefung.schritte.find((s) => s.status === "fehler").meldung}`;
 
   angaben.hidden = !pruefung.gueltig;
+  angaben.dataset.iban = "";
   if (pruefung.gueltig) {
     const a = pruefung.angaben;
     const zeilen = [
@@ -35,9 +57,8 @@ function zeige(registry) {
       ["Filiale", a.filiale], // null bei Ländern ohne Filialkennung
       ["Kontonummer", a.kontonummer],
     ].filter(([, wert]) => wert !== null);
-    angaben.replaceChildren(
-      ...zeilen.flatMap(([name, wert]) => [element("dt", "", name), element("dd", "", wert)]),
-    );
+    zeigeAngaben(zeilen);
+    ergaenzeBank(pruefung.iban, a.bankleitzahl, zeilen);
   }
 
   // Ohne Details bleibt nur das Ergebnis sichtbar

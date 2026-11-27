@@ -55,5 +55,6 @@ dl { display: grid; grid-template-columns: auto 1fr; gap: .15rem 1rem; margin: .
 dt { color: var(--leise); }
 dd { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; }
 .ladefehler { color: var(--fehler); }
+footer a { color: inherit; }
 footer { color: var(--leise); font-size: .85rem; padding-top: 2rem; padding-bottom: 2rem; }
 @media (max-width: 30rem) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .3rem; } }
