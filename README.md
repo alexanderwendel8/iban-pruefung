@@ -5,7 +5,8 @@ Prüft IBANs nach ISO 13616 Schritt für Schritt, als statische Seite für GitHu
 - [Weboberfläche](index.html) – Schritte bisher: Länge, Prüfziffer, Struktur, Bank (für die Länder des [BIC-Verzeichnisses](https://github.com/alexanderwendel8/bic-verzeichnis))
 - [IBAN-Spezifikation](docs/iban-spezifikation.md)
 - [Länderformate (JSON)](spec/iban-registry.json), erzeugt aus der [SWIFT IBAN Registry](spec/sources/iban-registry.txt)
-- [Testvektoren (JSON)](spec/test-vectors.json)
+- [Testvektoren (JSON)](spec/test-vectors.json) für die Formatprüfung
+- [Test-IBANs (JSON)](spec/test-ibans.json) zum Durchspielen der Seite, auch mit Bankprüfung
 
 Lokal starten: `python3 -m http.server`, dann <http://localhost:8000>.
 Tests: `node --test web/*.test.mjs` und `python3 scripts/build_registry.py`.

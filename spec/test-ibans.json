@@ -1,0 +1,341 @@
+{
+  "description": "IBANs, mit denen die Weboberfläche von Hand im Browser durchgespielt wurde, samt erwartetem Ergebnis. Ergänzt spec/test-vectors.json (reine Formatprüfung) um Fälle für den Prüfschritt „Bank“. Alle Konten sind fiktiv: Die IBANs sind aus den offiziellen Beispielen der SWIFT IBAN Registry abgeleitet, teils mit echter Bankkennung und neu berechneten Prüfziffern.",
+  "felder": {
+    "erwartet": "Gesamtergebnis der Seite: gültig oder ungültig",
+    "scheitert_an": "erster nicht bestandener Schritt: laenge, pruefziffer, struktur, bank oder null",
+    "bank": "nur bei bestandener Formatprüfung: Status im BIC-Verzeichnis (aktiv, entfernt, unbekannt, kein Verzeichnis), Schlüssel der Abfrage, Name und BIC"
+  },
+  "stand_bankdaten": "2026-11-28",
+  "hinweis": "Die Formatprüfung (laenge, pruefziffer, struktur) testet web/pruefung.test.mjs gegen diese Datei. Die Angaben unter bank hängen vom Stand des BIC-Verzeichnisses ab und werden nicht automatisch geprüft.",
+  "ibans": [
+    {
+      "iban": "DE89370400440532013000",
+      "land": "DE",
+      "zweck": "offizielles Beispiel der Registry",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "37040044",
+        "name": "Commerzbank",
+        "bic": "COBADEFFXXX"
+      }
+    },
+    {
+      "iban": "de89 3704 0044 0532 0130 00",
+      "land": "DE",
+      "zweck": "Kleinschreibung und Leerzeichen",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "37040044",
+        "name": "Commerzbank",
+        "bic": "COBADEFFXXX"
+      }
+    },
+    {
+      "iban": "DE89370400440532013001",
+      "land": "DE",
+      "zweck": "letzte Ziffer geändert",
+      "erwartet": "ungültig",
+      "scheitert_an": "pruefziffer",
+      "bank": null
+    },
+    {
+      "iban": "GB82WEST1234569876543",
+      "land": "GB",
+      "zweck": "ein Zeichen zu wenig",
+      "erwartet": "ungültig",
+      "scheitert_an": "laenge",
+      "bank": null
+    },
+    {
+      "iban": "GB29NWBK60161331926819",
+      "land": "GB",
+      "zweck": "offizielles Beispiel der Registry, mit Filiale",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "kein Verzeichnis",
+        "schluessel": "NWBK"
+      }
+    },
+    {
+      "iban": "GB55WEST1234569876543A",
+      "land": "GB",
+      "zweck": "Buchstabe in der Kontonummer, Prüfziffern passend berechnet",
+      "erwartet": "ungültig",
+      "scheitert_an": "struktur",
+      "bank": null
+    },
+    {
+      "iban": "DE973704004405320130A0",
+      "land": "DE",
+      "zweck": "Buchstabe an numerischer Stelle, Prüfziffern passend berechnet",
+      "erwartet": "ungültig",
+      "scheitert_an": "struktur",
+      "bank": null
+    },
+    {
+      "iban": "BR6699999A03000010009795493C1",
+      "land": "BR",
+      "zweck": "offizielles Beispiel der Registry, kein SEPA, alphanumerische Bankkennung",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "kein Verzeichnis",
+        "schluessel": "99999A03"
+      }
+    },
+    {
+      "iban": "NL91ABNA0417164300",
+      "land": "NL",
+      "zweck": "offizielles Beispiel der Registry, Land ohne Bankverzeichnis",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "kein Verzeichnis",
+        "schluessel": "ABNA"
+      }
+    },
+    {
+      "iban": "AT611904300234573201",
+      "land": "AT",
+      "zweck": "offizielles Beispiel der Registry, Bankleitzahl erfunden",
+      "erwartet": "ungültig",
+      "scheitert_an": "bank",
+      "bank": {
+        "status": "unbekannt",
+        "schluessel": "19043"
+      }
+    },
+    {
+      "iban": "AT611904300234573202",
+      "land": "AT",
+      "zweck": "letzte Ziffer geändert",
+      "erwartet": "ungültig",
+      "scheitert_an": "pruefziffer",
+      "bank": null
+    },
+    {
+      "iban": "AT592011100000123456",
+      "land": "AT",
+      "zweck": "echte Bankleitzahl",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "20111",
+        "name": "Erste Bank der oesterreichischen Sparkassen AG",
+        "bic": "GIBAATWWXXX"
+      }
+    },
+    {
+      "iban": "AT940010000000123456",
+      "land": "AT",
+      "zweck": "Bankleitzahl mit führenden Nullen",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "00100",
+        "name": "Oesterreichische Nationalbank",
+        "bic": "NABAATWWXXX"
+      }
+    },
+    {
+      "iban": "CH3709000011623852957",
+      "land": "CH",
+      "zweck": "echte Bankleitzahl (IID)",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "09000",
+        "name": "PostFinance AG",
+        "bic": "POFICHBEXXX"
+      }
+    },
+    {
+      "iban": "CH3330000011623852957",
+      "land": "CH",
+      "zweck": "QR-IID (QR-IBAN)",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "30000",
+        "name": "PostFinance AG",
+        "bic": "POFICHBEXXX"
+      }
+    },
+    {
+      "iban": "LI72088000002324013AA",
+      "land": "LI",
+      "zweck": "echte Bankleitzahl (IID)",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "08800",
+        "name": "Liechtensteinische Landesbank Aktiengesellschaft",
+        "bic": "LILALI2XXXX"
+      }
+    },
+    {
+      "iban": "IT50X0306911101000000123456",
+      "land": "IT",
+      "zweck": "echter ABI-Code, BIC von GLEIF",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "03069",
+        "name": "INTESA SANPAOLO S.P.A.",
+        "bic": "BCITITMMXXX"
+      }
+    },
+    {
+      "iban": "IT11X3677211101000000123456",
+      "land": "IT",
+      "zweck": "ABI-Code, den das Verzeichnis als entfernt führt",
+      "erwartet": "ungültig",
+      "scheitert_an": "bank",
+      "bank": {
+        "status": "entfernt",
+        "schluessel": "36772",
+        "name": "HYPE S.P.A.",
+        "bic": null
+      }
+    },
+    {
+      "iban": "CZ6508000000192000145399",
+      "land": "CZ",
+      "zweck": "echte Bankleitzahl",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "0800",
+        "name": "Česká spořitelna, a.s.",
+        "bic": "GIBACZPX"
+      }
+    },
+    {
+      "iban": "SK0502000000198742637541",
+      "land": "SK",
+      "zweck": "echte Bankleitzahl",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "0200",
+        "name": "Všeobecná úverová banka, a.s.",
+        "bic": "SUBASKBX"
+      }
+    },
+    {
+      "iban": "HU42117730161111101800000000",
+      "land": "HU",
+      "zweck": "offizielles Beispiel der Registry, Schlüssel ist der achtstellige Filialcode",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "11773016",
+        "name": "OTP I.kerületi LAFO fiók",
+        "bic": "OTPVHUHB"
+      }
+    },
+    {
+      "iban": "HU28999999991111101800000000",
+      "land": "HU",
+      "zweck": "Filialcode erfunden",
+      "erwartet": "ungültig",
+      "scheitert_an": "bank",
+      "bank": {
+        "status": "unbekannt",
+        "schluessel": "99999999"
+      }
+    },
+    {
+      "iban": "SI31020100012039086",
+      "land": "SI",
+      "zweck": "echte Bankleitzahl",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "02010",
+        "name": "NLB D.D.",
+        "bic": "LJBASI2XXXX"
+      }
+    },
+    {
+      "iban": "BE91310007547034",
+      "land": "BE",
+      "zweck": "echte Bankleitzahl",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "310",
+        "name": "ING België",
+        "bic": "BBRUBEBB"
+      }
+    },
+    {
+      "iban": "ES9121000418450200051332",
+      "land": "ES",
+      "zweck": "echte Bankleitzahl, BIC von GLEIF",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "2100",
+        "name": "CAIXABANK, S.A.",
+        "bic": "CAIXESBBXXX"
+      }
+    },
+    {
+      "iban": "ES5814650418450200051332",
+      "land": "ES",
+      "zweck": "echte Bankleitzahl ohne BIC im Verzeichnis",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "1465",
+        "name": "ING BANK, N.V. SUCURSAL EN ESPAÑA",
+        "bic": null
+      }
+    },
+    {
+      "iban": "FR3630003010050500013M02606",
+      "land": "FR",
+      "zweck": "echter Code banque",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "30003",
+        "name": "Société générale s.a.",
+        "bic": "SOGEFRPPXXX"
+      }
+    },
+    {
+      "iban": "PL61109010140000071219812874",
+      "land": "PL",
+      "zweck": "offizielles Beispiel der Registry, mit Einheit",
+      "erwartet": "gültig",
+      "scheitert_an": null,
+      "bank": {
+        "status": "aktiv",
+        "schluessel": "10901014",
+        "name": "Erste Bank Polska Spółka Akcyjna",
+        "bic": "WBKPPLPPXXX"
+      }
+    }
+  ]
+}
