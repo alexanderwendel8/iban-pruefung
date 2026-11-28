@@ -1,13 +1,14 @@
-import { bankschritt, bankverzeichnis, bankzeilen } from "./bank.js";
+import { bankschluessel, bankschritt, bankverzeichnis, bankzeilen } from "./bank.js";
 import { papierform, pruefeIban } from "./pruefung.js";
 
-const sucheBank = bankverzeichnis();
+const verzeichnis = bankverzeichnis();
 
 const eingabe = document.getElementById("iban");
 const ergebnis = document.getElementById("ergebnis");
 const liste = document.getElementById("schritte");
 const details = document.getElementById("details");
 const angaben = document.getElementById("angaben");
+const quelle = document.getElementById("quelle");
 
 const STATUSTEXT = {
   ok: "bestanden",
@@ -38,13 +39,32 @@ function gesamt(pruefung, schritte) {
   return ["ok", `${papierform(pruefung.iban)} hat alle Prüfschritte bestanden.`];
 }
 
+/** Pflicht-Quellenangabe zu den angezeigten Bankdaten; `mitBic`, wenn ein BIC gezeigt wird. */
+function zeigeQuelle(q, mitBic) {
+  quelle.hidden = !q;
+  if (!q) return;
+  const verweis = (text, url) => Object.assign(element("a", "", text), { href: url });
+  const teile = [
+    `Bankdaten: ${q.hinweis}`,
+    verweis("Quelle", q.url),
+    q.bedingungen && verweis("Nutzungsbedingungen", q.bedingungen),
+    q.lizenz && verweis("Lizenz", q.lizenz),
+    mitBic && q.bic_hinweis && `BIC: ${q.bic_hinweis}`,
+  ].filter(Boolean);
+  quelle.replaceChildren(...teile.flatMap((teil, i) => (i ? [" · ", teil] : [teil])));
+}
+
 /** Zeichnet Ergebnis, Angaben und Schritte. `bank` ist das Ergebnis der Bankabfrage oder ein Zustand. */
 function zeichne(pruefung, bank) {
   const a = pruefung.angaben;
-  const schritte = [...pruefung.schritte, bankschritt(bank, a?.land, a?.bankleitzahl)];
+  const schluessel = a ? bankschluessel(pruefung.iban, a.bankleitzahl) : null;
+  const schritte = [...pruefung.schritte, bankschritt(bank, a?.land, schluessel)];
   const [status, text] = gesamt(pruefung, schritte);
   ergebnis.dataset.status = status;
   ergebnis.textContent = text;
+
+  // Quellenangabe, sobald Daten aus dem Verzeichnis im Spiel sind
+  zeigeQuelle(bank?.quelle, Boolean(bank?.bank?.bic));
 
   // Angaben erst zeigen, wenn auch die Bank geprüft ist
   angaben.hidden = status !== "ok";
@@ -97,7 +117,8 @@ async function zeige(registry) {
   zeichne(pruefung, "laeuft");
   let bank;
   try {
-    bank = await sucheBank(pruefung.iban.slice(0, 2), pruefung.angaben.bankleitzahl);
+    const schluessel = bankschluessel(pruefung.iban, pruefung.angaben.bankleitzahl);
+    bank = await verzeichnis.suche(pruefung.iban.slice(0, 2), schluessel);
   } catch {
     bank = "nicht_erreichbar";
   }
@@ -113,8 +134,15 @@ try {
   eingabe.addEventListener("input", () => zeige(registry));
   details.addEventListener("change", () => zeige(registry));
   zeige(registry);
-  // Länderliste des Bankverzeichnisses vorab laden, damit die erste Prüfung nicht wartet
-  sucheBank("", "").catch(() => {});
+  // Länderliste des Bankverzeichnisses vorab laden: für den Hinweis unten,
+  // und damit die erste Prüfung nicht darauf wartet
+  verzeichnis
+    .laender()
+    .then((laender) => {
+      const namen = [...laender.values()].sort((x, y) => x.localeCompare(y, "de"));
+      document.getElementById("banklaender").textContent = new Intl.ListFormat("de").format(namen);
+    })
+    .catch(() => {});
 } catch (fehler) {
   const hinweis = document.getElementById("ladefehler");
   hinweis.textContent = `Die Länderformate konnten nicht geladen werden (${fehler.message}).`;
