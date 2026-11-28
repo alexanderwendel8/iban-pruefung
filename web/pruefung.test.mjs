@@ -102,3 +102,13 @@ test("jedes Land liefert eine Bankleitzahl in der registrierten Länge", () => {
     assert.equal(kontonummer.length, land.account_code[1] - land.account_code[0], iban);
   }
 });
+
+test("von Hand verwendete Test-IBANs: Formatprüfung liefert das erwartete Ergebnis", () => {
+  const { ibans } = lies("../spec/test-ibans.json");
+  for (const { iban, scheitert_an } of ibans) {
+    const fehler = pruefeIban(iban, registry).schritte.find((s) => s.status === "fehler");
+    // der Schritt „Bank“ läuft erst nach der Formatprüfung und braucht das Netz
+    const erwartet = scheitert_an === "bank" ? null : scheitert_an;
+    assert.equal(fehler?.id ?? null, erwartet, iban);
+  }
+});
