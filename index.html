@@ -16,16 +16,17 @@
     <p id="ergebnis" class="ergebnis" role="status" aria-live="polite"></p>
 
     <dl id="angaben" class="angaben" hidden></dl>
+    <p id="quelle" class="quelle" hidden></p>
 
     <label class="schalter"><input id="details" type="checkbox"> Details anzeigen</label>
     <ol id="schritte" class="schritte" hidden></ol>
     <p id="ladefehler" class="ladefehler" hidden></p>
   </main>
   <footer>
-    <p>Die IBAN wird Schritt für Schritt in deinem Browser geprüft. Bei österreichischen IBANs wird zusätzlich die Bank im BIC-Verzeichnis nachgeschlagen.</p>
+    <p>Die IBAN wird Schritt für Schritt in deinem Browser geprüft. Für einige Länder wird zusätzlich die Bank im <a href="https://alexanderwendel8.github.io/bic-verzeichnis/">BIC-Verzeichnis</a> nachgeschlagen: <span id="banklaender">Länderliste nicht geladen</span>. Dafür werden nur Land und Bankleitzahl übertragen.</p>
     <p>
     Formate aus der SWIFT IBAN Registry (<span id="anzahl">–</span> Länder).
-    Bankdaten für Österreich aus dem <a href="https://alexanderwendel8.github.io/bic-verzeichnis/">BIC-Verzeichnis</a> (Quelle: OeNB).
+    Die Quelle der Bankdaten steht jeweils beim Ergebnis.
     Die Prüfung sagt nichts darüber, ob das Konto existiert.
     </p>
   </footer>
